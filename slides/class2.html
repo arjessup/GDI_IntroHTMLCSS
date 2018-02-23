@@ -58,6 +58,193 @@
           </div>
         </section>
 
+
+										<!-- more complicated HTML elements: -->
+										<section>
+											<h3>Anatomy of an HTML element</h3>
+											<p>Attribute-Value Pairs are used to tell the browser more information about a particular html element.</p>
+											<ul>
+												<li class="fragment">
+													<strong class="blue">Attribute</strong>
+													<ul>
+														<li>A set collection of terms we can use to tell the browser what type of information we are giving it.</li>
+														<li>Ex: class, id, language, style, identity, source</li>
+													</ul>
+												</li>
+												<li class="fragment">
+													<strong class="blue">Value</strong>
+													<ul>
+														<li>The actual information we are giving the browser, as associated with the attribute.</li>
+														<li>Values must be contained inside quotation marks.</li>
+												</li>
+												</ul>
+											</li>
+										</ul>
+
+<pre class="fragment"><code class ="html">&lt;div id="copyright">&copy; GDI 2013&lt;/div>
+&lt;img src="my_picture.jpg" />
+&lt;a href="http://girldevelopit.com">GDI&lt;/a>
+
+</code></pre>
+										</section>
+
+										<!-- Links-->
+										<section>
+											<h3>Element: Link</h3>
+											<p>The link element is the tag &lt;a>link text&lt;/a></p>
+											<p class="fragment">On its own, it doesn't do much.  For that link to take the user somewhere when they click on it, we need to provide the browser with more information using <b>attributes</b>.</p>
+											<ul class="fragment">
+												<li>Attribute: <b>href</b>. The value tells the browser where the file is that the browser should show the user next.</li>
+												<li>Attribute: <b>title</b>. The title attribute contains text describing the link (accessibility)</li>
+											</ul>
+<pre class="fragment"><code>&lt;a href="http://www.girldevelopit.com" title="GDI Homepage">
+  GDI
+&lt;/a></code></pre>
+											<p class="fragment"><a href="http://www.girldevelopit.com" title="Girl Develop It Homepage">GDI</a></p>
+										</section>
+
+										<!-- Link Attributes -->
+										<section>
+											<h3>Link Attributes</h3>
+											<p>There are more attributes to customize a link's behavior: </p>
+											<div class="fragment"><p>To open the link in a new tab, use the <b>target</b> attribute with the value <b>_blank</b>.</p>
+<pre><code>
+&lt;a href="home.html" target="_blank">Link Text&lt;/a>
+
+</code></pre></div>
+				<div class="fragment">
+					<p><br>To have the link launch the user's mail program and open a new email to a specific address, update the <b>href</b> value.</p>
+<pre><code>
+&lt;a href="mailto:info@girldevelopit.com">E-mail us!&lt;/a>
+
+</code></pre>
+										</section>
+
+										<!-- Images-->
+										<section>
+											<h3>Element: Image</h3>
+											<p>Like links, images use attribute/value pairs to provide necessary information to the browser.</p>
+											<ul>
+												<li>Tag: &lt;img></li>
+												<li>Src attribute: where should the browser go to get the image file</li>
+												<li>Alt attribute: Text describing the link. This shows up if the image file isn't found and is an accessibility feature.</li>
+											</ul>
+<pre><code>
+&lt;img src="https://www.girldevelopit.com/assets/gdi-logo.png" <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt="Girl Develop It Logo"&gt;
+
+</code></pre>
+											<img src="https://www.girldevelopit.com/assets/gdi-logo.png" alt="Girl Develop It Logo" >
+											<p><small>* Notice: This tag is our first example of a stand-alone or "self-closing" element.</small></p>
+										</section>
+
+										<!-- relative & absolute links -->
+										<section>
+											<h3>Paths: Giving The Browser Directions</h3>
+											<p>For elements like links and images, we need to give the browser paths to files.  For a link, it's a path to another website page.  For images, it's a path to an image file.</p>
+											<p class="fragment">We can either include those files in our own website or we can tell the browser to access those files from outside of our website.</p>
+											<p class="fragment"><b>Relative Paths</b>: files must be included in our website.</p>
+											<p class="fragment"><b>Absolute Paths</b>: files can be on another site.  Can also use absolute paths for files within our own site, but generally shouldn't.</p>
+										</section>
+										<section>
+											<h3>Relative Paths</h3>
+											<p>Relative paths tell the browser where a file is by describing that file's location <i>relative</i> to the file the browser is currently reading code from.</p>
+											<p class="fragment">For example, if we want to tell the browser how to get to a file <b>filename.png</b> in our /images directory, and we're writing that instruction in our index.html file, we would give it a path of: <b>images/filename.png</b></p>
+											<p class="fragment">That tells the browser - look for a directory named "images", then go inside of it and grab the file "filename.png"</p>
+											<p class="fragment">If we were to rearrange our website, like changing the name of our "images" directory, or placing all of our .html files into their own directory, we would have to rewrite all those paths.</p>
+										</section>
+										<section>
+											<h3>Absolute Paths</h3>
+											<p>Absolute paths tell the browser where a file is by using that file's actual location on the internet. We use this for external resources, but can use absolute paths to link to resources within your own website.</p>
+											<p class="fragment">If we want to use the Girl Develop It logo from the GDI website, we would give the browser the following path: "https://www.girldevelopit.com/assets/gdi-logo-a3d9fa0d479a3951ad642db0bd12f310.png".</p>
+											<p class="fragment">No matter what website we put that in, no matter where in that website it goes, the path will always be the same.</p>
+											<p class="fragment">But the browser has to go out to a server to get that file, which takes more time that getting a file that is part of your website.</p>
+										</section>
+										<section>
+											<h3>Relative vs. Absolute paths for links & images</h3>
+											<ul>
+												<li>
+													<strong class="blue">Relative</strong>
+													<ul>
+														<li>Change depending upon the page the link is on.
+															<ul>
+																<li>Links within the same directory need no path information. <code class="blue">"filename.jpg"</code></li>
+																<li>Subdirectories are listed without preceding slashes. <code class="blue">"images/filename.jpg"</code></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<strong class="blue">Absolute</strong>
+													<ul>
+														<li>Refer to a specific location of a file, including the domain. <code class="blue">"http://www.girldevelopit.com/chapters/detroit"</code></li>
+												</li>
+												<li>Typically used when pointing to a link that is not within your own domain.</li>
+												</ul>
+												</li>
+											</ul>
+										</section>
+
+										<!-- Lets develop it-->
+										<section class="hide-pdf">
+											<h3>Let's Develop It</h3>
+											<p>Make some more updates to your site, in the index.html file</p>
+											<ol>
+												<li>Add links that open in the same window, a new window and link to an e-mail address.</li>
+												<li>Take an image from your computer, or download one from the internet, and save it to your /images folder for your site.</li>
+												<li>Using a relative path, add that image to your site.</li>
+												<li>Find another image on the internet and add it to your page using an absolute path (hint: do not save this one to your /images directory)</li>
+											</ol>
+											<p>As always, save frequently and keep refreshing Chrome at each step to catch errors early.</p>
+										</section>
+
+										<!--Comments-->
+										<section>
+											<h3>Comments</h3>
+											<p>Comments are not displayed by the browser. They are visible when you view source from the browser.</p>
+											<pre><code>&lt;!-- Comment goes here --></code></pre>
+											<p>Comments organize your code into sections to make it more readable. They can also be used to 'comment out' large chunks of code to hide it from the browser.</p>
+				<pre><code>
+&lt;!-- Beginning of header -->
+  &lt;div id="header">Header Content &lt;/div>
+&lt;!-- End of header -->
+
+&lt;!--
+ &lt;ol>
+    &lt;li>List Item&lt;/li>
+    &lt;li>Another List Item&lt;/li>
+ &lt;/ol>
+-->
+					</code></pre>
+										</section>
+
+										<!-- Character codes-->
+										<section>
+											<h3>Character codes</h3>
+											<p>There are character codes for many different characters in many different languages</p>
+											<div class="left">
+												<ul>
+													<li>Delta: &amp;delta; &delta;</li>
+													<li>Copyright symbol: &amp;copy; &copy;</li>
+													<li>Grave: &amp;grave; &grave;</li>
+													<li>An grave a: &amp;agrave; &agrave;</li>
+													<li>A full list is available at <a href="http://htmlandcssbook.com/extras/html-escape-codes/" target="_blank">htmlandcssbook.com</a></li>
+												</ul>
+											</div>
+										</section>
+
+										<section>
+											<h3>Let's Develop It!</h3>
+											<ol>
+												<li>Add a copyright statement, with the proper copyright symbol, to the bottom of your site</li>
+												<li>Find an element in your page and add a comment above it stating how you would like to style it when we learn CSS next week.</li>
+											</ol>
+											<p>Ex:</p>
+<pre><code class="html">
+  &lt;!-- Make this h1 content red and underlined --&gt;
+  &lt;h1>This is a header!&lt;/h1>
+	</pre></code>
+										</section>
+
         <!-- Role of HTML v. CSS-->
 				<section>
 					<h3>Anatomy of a website</h3>
@@ -73,7 +260,7 @@
 							<p>Making the font of that paragraph blue and 18pt is <strong>Presentation</strong></p>
 						</li>
 					</ul>
-					<p class="fragment">For today's class, we'll focus on CSS - the presentation of your site</p>
+					<p class="fragment">For the rest of today's class, we'll focus on CSS - the presentation of your site</p>
 				</section>
 
         <!-- What is CSS-->
@@ -346,348 +533,14 @@ p {
           </ol>
         </section>
 
+								       <!-- Question-->
+								        <section>
+								          <h2>Questions?</h2>
+								          <div style = "font-size:1200%; height:100%; margin-top:30%" class ="blue">?
+								            <div class ="clear"></div></div>
+								        </section>
 
-<!-- part 3: more control (Classes and font styles) -->
-
-        <!-- Selectors Class-->
-        <section>
-          <h3>CSS Selector: Class</h3>
-					<ul>
-						<li class="fragment">A class is another way of targeting parts of your HTML so that you can assign styles to them.</li>
-						<li class="fragment red">Unlike the Element selector, however, use of the Class selector requires making a change to your HTML as well as the CSS.</li>
-						<li class="fragment">You write a rule for the class name in your CSS, and add an attribute of <b>class</b> to the target HTML element(s), and give that attribute a value of the same class name as from your CSS.</li>
-						<li class="fragment">All elements with that class will get the styles - and those elements can be of different types (p, div, h1, etc)</li>
-					</ul>
-        </section>
-
-
-        <section>
-          <h3>CSS Selector: Class</h3>
-<pre><code class = "html">.warning {
-  color: red;
-}</code></pre>
-          <p>Selects all elements with a class of "warning".<br /><br /></p><br />
-
-<pre><code class = "html">
-&lt;p class="warning">Run away!&lt;/p>
-&lt;h3 class="warning">No, really. RUN AWAY!&lt;h3>
-
-</code></pre>
-         <br />
-         <p style="color:red;">Run away!</p>
-				 <h3 style="color:red;">No, really. RUN AWAY!</h3>
-        </section>
-
-<section>
-  <h3>Class: CSS vs HTML</h3>
-  <p>HTML Attribute: </p>
-  <ul>
-    <li>Add the "class" attribute to all HTML elements in our page that we want targeted for a particular CSS rule.</li>
-    <li>The value of the "class" attribute is the class name.</li>
-    <li>Just like other attribute-value pairs, the syntax is: class="className" </li>
-  </ul>
-  <br />
-  <br />
-<div class="fragment">
-  <p>CSS Selector: </p>
-  <ul>
-    <li>
-      In the selector, we tell the browser that the selector is a class by starting with a "."
-    </li>
-    <li>
-      This is followed immediately by the class name. The class name is case sensitive - it must match the value we gave to the "class" attribute in our HTML.
-    </li>
-  </ul>
 </div>
-</section>
-
-
-        <!-- Multiple values -->
-        <section>
-        <h3>CSS Syntax: Property Values</h3>
-        <p>Each property can have one or more comma separated values.</p>
-<pre><code class = "html">p{
-  color: white;
-  background-color: red;
-  font-family: Arial, sans-serif;
-}</code></pre>
-      </section>
-
-
-        <!-- Font family-->
-        <section>
-          <h3>Property: Font-family</h3>
-          <p>The font-family property deﬁnes which font is used.</p>
-<pre><code class = "html">p {
-  font-family: "Times New Roman";
-  font-family: serif;
-  font-family: "Arial", sans-serif;
-}</code></pre>
-          <p>Specific font name</p>
-          <p>Generic name</p>
-          <p>Comma-separated list</p>
-        </section>
-
-        <!-- Font size -->
-        <section>
-          <h3>Property: Font-size</h3>
-          <p>The font-size property speciﬁes the size of the font.</p>
-<pre><code class = "html">p {
-  font-size: 12px;
-  font-size: 1.5em;
-  font-size: 100%;
-}</code></pre>
-          <p>Pixels</p>
-          <p>"em"</p>
-          <p>Percentage</p>
-        </section>
-
-        <!-- Fonts-->
-        <section>
-          <h3>Property: Fonts (shorthand)</h3>
-<pre><code class = "html">p {
-  font-style: italic;
-  font-weight: bold;
-  font-size: 10px;
-  font-family: sans-serif;
-}</code></pre>
-          OR
-<pre><code class = "html">p {
-  font: italic bold 10px sans-serif;
-}</code></pre>
-        </section>
-
-        <!-- Exercise-->
-        <section>
-          <h3>Let's develop it</h3>
-          <ol>
-            <li>Open up your styles.css and index.html files again in Sublime Text</li>
-            <li>Add a few different class attributes and values to some elements in your HTML page. Reuse some classes!</li>
-            <li>Create rules for those classes in your .css file. Don't forget - spelling and case matter.</li>
-            <li>Use our 5 new font properties to change the look of your text through those classes.  These slides don't include all the values for the font properties - Google what you don't know.</li>
-            <li>Don't forget to open index.html in Chrome (or refresh the page if it is already open) to see what you've done!</li>
-          </ol>
-        </section>
-
-        <!-- Selectors ID-->
-        <section>
-          <h3>CSS Selector: ID</h3>
-					<ul>
-						<li class="fragment">An ID is another way of targeting a part of your HTML so that you can assign styles to it.</li>
-						<li class="fragment">With an ID, you can target a specific HTML element, instead of all HTML elements of a particualr type.</li>
-						<li class="fragment">Like the Class selector, using an ID requires making a change to your HTML as well as your CSS.</li>
-						<li class="fragment">Like a Class, the CSS Rule associated with your ID is applied to the element in your HTML that has that same ID.</li>
-						<li class="fragment">Unlike a Class, an ID can only be used once on an HTML page.</li>
-					</ul>
-        </section>
-
-        <section>
-          <h3>CSS Selector: ID</h3>
-<pre><code class = "html">
-#footer {
-  background-color: orange;
-}
-
-</code></pre>
-          <p>Selects all elements with an id of "footer".</p><br /><br />
-
-<pre><code class = "html">
-&lt;p id="footer">Copyright 2015&lt;/p>
-
-</code></pre>
-         <p style="background-color:orange;">Copyright 2015</p>
-        </section>
-
-<section>
-  <h3>ID: HTML vs CSS</h3>
-  <p>HTML Attribute: </p>
-  <ul>
-    <li>Add the "id" attribute to the single HTML element in our page that we want targeted for the CSS rule.</li>
-    <li>The value of the "id" attribute is the ID name.</li>
-    <li>Just like other attribute-value pairs, the HTML syntax is: id="idName" </li>
-  </ul>
-  <br />
-	<div class="fragment">
-  <p>CSS Selector: </p>
-  <ul>
-    <li>
-      In the selector, we tell the browser that the selector is an ID by starting with a "#"
-    </li>
-    <li>
-      This is followed immediately by the ID name. The ID name is case sensitive, and spelling counts.  It must match the value we gave to the "id" attribute in our HTML.
-    </li>
-  </ul>
-</div>
-</section>
-
-        <!-- ID vs Class-->
-        <section>
-        <h3>IDs vs. Classes</h3>
-        <div class = "left-align">
-          <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. I.E. A webpage only has one footer.
-          <p>The "#" is how you tell the browser that "this is an id."</p>
-        </div>
-        <div class = "left-align">
-          <span class = "yellow">Class</span> -- Many elements can have the same class. I.E. There can be many warnings on one webpage.
-          <p>The "." is how you tell the browser that "this is a class name."</p>
-        </div>
-      </section>
-
-<section>
-  <h3>CSS Syntax: Properties</h3>
-  <p>So far we've looked at properties that were fairly simple, with only a few values.</p>
-  <p>Now we'll look at a CSS property family that has much more flexibility in the number of values, including some location information!</p>
-</section>
-
-
-        <section>
-          <h3>CSS Properties: Borders</h3>
-          <p>You can specify each property separately...</p>
-
-<pre><code class ="css">#myID {
-  border-width: 10px;
-  border-style: dashed;
-  border-color: #666666;
-}</code></pre>
-<br />
-<pre><code class ="css">#myID {
-  border: 10px dashed #666666;
-}</code></pre>
-          <p> ...or all three together.</p>
-        </section>
-        <section>
-          <h3>CSS Properties: Borders</h3>
-          <p>Borders can be applied to all 4 sides of an element.</p>
-          <p>CSS allows us to choose which of those sides are styled - we don't have to style them all!</p><br />
-          <p style="border:10px dashed #666666;">This paragraph has a style of <br />border:10px dashed #666666;</p><br /><br />
-          <p style="border-left:10px solid red;">This paragraph has a style of<br /> border-left:10px solid red;</p>
-        </section>
-
-        <section>
-          <h3>CSS Properties: Borders</h3>
-          <p>You can also apply different values to each side of a border.</p><br />
-          <p style="border-color: red; border-width: 10px 5px 1px 20px; border-style: solid;">This paragraph has a style of <br />border-color: red; <br />border-style: solid; <br />border-width: 10px&nbsp;&nbsp;5px&nbsp;&nbsp;1px&nbsp;&nbsp;20px;</p>
-        </section>
-        <section>
-          <h3>Border</h3>
-          <p style="border: 4px solid #ff0000; background-color: grey;">A solid red border</p>
-<pre><code class = "html">border: 4px solid #ff0000;</code></pre><br />
-<br />
-          <p style="border-top: 6px dotted #000000; background-color: grey;">A thick dotted black top border</p>
-<pre><code class ="html">border-top: 6px dotted #000000;</code></pre>
-<br />
-<br />
-          <p style="border-top: 4px solid #ff0000; border-bottom: 6px dotted #000000; background-color: grey;">Two diﬀerent border styles</p>
-<pre><code class ="html">border-top: 4px solid #ff0000;
-border-bottom: 6px dotted #000000;</code></pre>
-        </section>
-
-
-        <!-- Exercise-->
-        <section>
-          <h3>Let's develop it</h3>
-          <ol>
-            <li>In your styles.css and index.html files ...</li>
-            <li>Add an ID or two to some elements</li>
-            <li>Give those elements borders using the ID selector</li>
-            <li>Don't forget to open index.html in Chrome (or refresh the page if it is already open) to see what you've done!</li>
-          </ol>
-        </section>
-
-
-<section>
-<h3>CSS Concepts: Cascading</h3>
-          <p>Styles "cascade" down until changed</p>
-<pre><code class = "html">p{
-  color:blue;
-  font-family: 'Helvetica';
-  font-size: 24px;
-}
-.red{
-  color:red;
-}
-#special{
-  font-family: Times;
-  font-size: 44px;
-}</code></pre>
-
-<pre><code class = "html">&lt;p>Paragraph 1&lt;/p>
-&lt;p class="red">Paragraph 2&lt;/p>
-&lt;p class="red" id="special">Paragraph 3&lt;/p></code></pre>
-<p style="color:blue; font-family: 'Helvetica'; font-size: 24px;">Paragraph 1</p>
-<p style="color:red; font-family: 'Helvetica'; font-size: 24px;">Paragraph 2</p>
-<p style="color:red; font-family: 'Times';font-size: 44px;">Paragraph 3</p>
-        </section>
-
-<section>
-<h3>Let's Develop It</h3>
-<ol>
-<li>
-Add a rule for the &lt;body&gt; tag at the very top of your .css file. In this rule, set a property that you have used in another rule, but give it a different value.
-</li>
-<li>
-Open/refresh your html file in Chrome - see which elements are changed by your new CSS rule, and which aren't.
-</li>
-<li>
-If you have time, now that we've gone over IDs vs Classes again, change how you are using those selectors in your website so they match how they *should* be used
-</li>
-  </ol>
-</section>
-
-
-<section>
-<h3>HTML Syntax: Linking CSS to HTML</h3>
-<p>We have done this entire class using an external style sheet, but there are actually three ways to apply CSS to your HTML:</p>
-<ol>
-<li>
-Inline CSS
-</li>
-<li>
-Embedded CSS
-  </li>
-	<li>External Stylesheet</li>
-</ol>
-</section>
-
-        <!-- Inline -->
-        <section>
-          <h3>Connecting CSS to HTML: Inline</h3>
-<pre><code class = "html">
-&lt;p style="color:red; font-size:18px;">
-  Some text.
-&lt;/p>
-
-</code></pre>
-          <p>Uses the HTML attribute style.</p>
-          <p>Difficult to use in large projects</p>
-          <p>Not preferred.</p>
-        </section>
-
-        <!-- Embedded -->
-        <section>
-          <h3>Connecting CSS to HTML: Embedded</h3>
-<pre><code class = "html">&lt;head>
-  &lt;style type="text/css">
-    p {
-      color: blue;
-      font-size: 12px;
-    }
-  &lt;/style>
-&lt;/head></code></pre>
-          <p>Inside &lt;head> element.</p>
-          <p>Uses &lt;style> tag.</p>
-          <p>Can only be used in one html file</p>
-        </section>
-
-
-
-       <!-- Question-->
-        <section>
-          <h2>Questions?</h2>
-          <div style = "font-size:1200%; height:100%; margin-top:30%" class ="blue">?
-            <div class ="clear"></div></div>
-        </section>
-      </div>
 
       <footer>
         <div class="copyright">

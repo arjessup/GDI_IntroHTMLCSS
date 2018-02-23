@@ -140,6 +140,100 @@ a:link
 
 
 
+							 <!-- Float-->
+							 <section>
+								<h3>Specifying Location for  Elements</h3>
+								<p>Float</p>
+								<p>Static Positioning</p>
+								<p>Absolute Positioning</p>
+								<p>Relative Positioning</p>
+							</section>
+							 <section>
+								 <h3>Float</h3>
+								 <div class = "left-align">
+										<ul>
+										<li>"Floating" an element takes it in the normal flow, as far to the left or right of it's containing element as possible.</li>
+										<li>Any other elements, such as paragraphs or lists, will wrap around the floated element.</li>
+										<li>Always specify a width when floating an element, otherwise the element is likely to take up the whole page and not appear floated.</li>
+										<li>You can specify a) whether an element is floated or not, and b) which side it ﬂoats on.</li>
+										</ul>
+								 </div>
+							 </section>
+							 <!--example float-->
+							 <section>
+							 <h3>Float: Example</h3>
+							 <p>Below a &lt;blockquote> is floated to the left, allowing text to wrap around it on the right</p>
+							 <img src="images/example-floatbq.png" alt="example float" />
+							 </section>
+							 <section>
+								 <h3>Float</h3>
+				<pre><code class ="html">
+					.float{
+						float:left;
+						width:200px;
+						background:yellow;
+					}
+				</code></pre>
+								<div style ="float:left; text-align: left;width:200px;background:yellow; color:black; padding: 10px;">
+									<small>Hi, I'm a yellow box with black text.<br/>
+									I like to hang out on the left side.</small><br/>
+								</div>
+								<div class = "left-align">Not floating element</div>
+								<div class = "left-align">Not floating element</div>
+								 <div class = "left-align">Not floating element with wrapping Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+							 </section>
+
+							 <section>
+							 <h3>Using floats to place elements side by side</h3>
+							 <p>If you want two block level elements to be side by side, you need to float both elements. One left, and one right.</p>
+							 <img src="images/example-float-column.png" />
+							 </section>
+							 <!-- Clear-->
+							 <section>
+								 <h3>Clear</h3>
+								 <ul>
+								 <li>Clearing tells the element on which side (right, left, both) other elements <strong>cannot</strong> appear. </li>
+								 <li>If you had an image floated left, and you did not want the paragraph to appear next to it, you would add <strong>clear: left;</strong> to the paragraph.</li>
+								 <li>Clearing both sides makes sure ﬂoats don’t ﬂow past the clear element.</li>
+								 </ul>
+				<pre><code class = "html">
+					clear: right;
+					clear: left;
+					clear: both;
+				</code></pre>
+							 </section>
+
+							 <section>
+									<h3>Clear</h3>
+				 <pre><code class ="html">
+					 .float{
+						 float:left;
+						 width:50px;
+						 background:yellow;
+					 }
+					 .clear-left{
+						 clear:left
+					 }
+				 </code></pre>
+								 <div style ="float:left;width:50px;background:yellow; color:black; ">
+									 hi<br/>
+									 hi<br/>
+									 hi<br/>
+								 </div>
+								 <div class = "left-align">Not floating element</div>
+								 <div class = "left-align">Not floating element</div>
+								 <div class = "left-align" style="clear: left;">Non-floating element with a class of <strong>.clear-left</strong></div>
+								</section>
+
+								<!-- Exercise-->
+							 <section>
+								 <h3>Let's Develop It</h3>
+								 <p>Use the three values of float (left, right, clear) to position your header, content, sidebar, and footer.</p>
+								 <p>Now that you see those divs in place, you may want to adjust the width/height, padding, border, and margins you added in the last exercise.</p>
+							 </section>
+
+
+
 
 
         <section>
@@ -153,7 +247,7 @@ a:link
 
        <section>
          <h3>Static Positioning</h3>
-         <p>In normal flow, inline boxes flow from left to right, wrapping to next line when needed.</p>
+         <p>In normal flow, inline elements flow from left to right, wrapping to next line when needed.</p>
 <pre><code class = "html">
 &lt;img src="images/cookie1.png"/>
 &lt;img src="images/cookie2.png"/>
@@ -177,7 +271,7 @@ a:link
 
        <section>
          <h3>Static Positioning</h3>
-         <p>In normal flow, block boxes flow from top to bottom, making a new line after every box.</p>
+         <p>In normal flow, block elements flow from top to bottom, making a new line after every box.</p>
 <pre><code class ="html">
  &lt;p>Greetings&lt;/p>
  &lt;p>Hello&lt;/p>

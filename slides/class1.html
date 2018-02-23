@@ -127,7 +127,7 @@
 					</li>
 					<li class="fragment">
 						<div class="green">Front end development</div>
-						<div>The outwardly visible elements of a website or application. Tools include languages like HTML and CSS, web browsers, and a development environment.</div>
+						<div>The outwardly visible elements of a website or application. Tools include languages like HTML and CSS, web browsers, and a text editor.</div>
 					</li>
 					<li class="fragment">
 						<div class="green">Back end development</div>
@@ -156,8 +156,8 @@
 				<h3>Terms & Definitions</h3>
 				<p class="green">Browser</p>
 				<p>
-					A computer application (Firefox, Chrome, Internet Explorer, etc.) that can interpret certain file types. In the same way that Microsoft Word can display .docx, .txt, and other types of files, browsers can handle .html, .php, and many other file types.
-					And like Word, the browser does not display the code that is included in those files. Instead it interprets that code and displays it as a website, with images, colors, words, and structure.
+					A computer application (Firefox, Chrome, Internet Explorer, etc.) that can interpret certain file types. In the same way that Microsoft Word can display .docx files, browsers can handle .html (and other) files.
+					Like Word, the browser does not display the code that is included in those files. Instead it interprets that code and displays it as a website, with images, colors, words, and structure.
 				</p>
 			</section>
 			<section>
@@ -312,7 +312,7 @@
 				<h3>How A Browser Reads HTML</h3>
 				<ul>
 					<li class="fragment">The browser needs to differentiate between HTML tags and content, and it needs to tell opening tags from closing tags.</li>
-					<li class="fragment">A browser is a computer application, not a human - it cannot interpret anything. And it only "sees" one character at a time.</li>
+					<li class="fragment">A browser is a computer application, not a human - it can't apply context to what it reads.</li>
 					<li class="fragment">To tell the browser that we are starting an opening tag we use a special character: <strong>&lt;</strong> </li>
 					<li class="fragment">To tell the browser that we are starting a closing tag, we use the opening character plus a slash: <strong>&lt;/</strong></li>
 					<li class="fragment">To tell the browser what that tag is instructing it to do, we include a tag name, such as <strong>p</strong>, <strong>ol</strong>, etc.</li>
@@ -727,191 +727,6 @@
 			</section>
 
 
-
-						<!-- more complicated HTML elements: -->
-						<section>
-							<h3>Anatomy of an HTML element</h3>
-							<p>Attribute-Value Pairs are used to tell the browser more information about a particular html element.</p>
-							<ul>
-								<li class="fragment">
-									<strong class="blue">Attribute</strong>
-									<ul>
-										<li>A set collection of terms we can use to tell the browser what type of information we are giving it.</li>
-										<li>Ex: class, id, language, style, identity, source</li>
-									</ul>
-								</li>
-								<li class="fragment">
-									<strong class="blue">Value</strong>
-									<ul>
-										<li>The actual information we are giving the browser, as associated with the attribute.</li>
-										<li>Values must be contained inside quotation marks.</li>
-								</li>
-								</ul>
-							</li>
-						</ul>
-
-<pre class="fragment"><code class ="html">&lt;div id="copyright">&copy; GDI 2013&lt;/div>
-&lt;img src="my_picture.jpg" />
-&lt;a href="http://girldevelopit.com">GDI&lt;/a>
-
-</code></pre>
-						</section>
-
-						<!-- Links-->
-						<section>
-							<h3>Element: Link</h3>
-							<p>The link element is the tag &lt;a>link text&lt;/a></p>
-							<p class="fragment">On its own, it doesn't do anything.  For that link to take the user somewhere when they click on it, we need to provide the browser with more information using <b>attributes</b>.</p>
-							<ul class="fragment">
-								<li>Attribute: <b>href</b>. The value tells the browser where to take the user on click.</li>
-								<li>Attribute: <b>title</b>. The title attribute contains text describing the link (accessibility)</li>
-							</ul>
-							<pre class="fragment"><code>&lt;a href="http://www.girldevelopit.com" title="GDI Homepage">
- GDI
-&lt;/a></code></pre>
-							<p class="fragment"><a href="http://www.girldevelopit.com" title="Girl Develop It Homepage">GDI</a></p>
-						</section>
-
-						<!-- Link Attributes -->
-						<section>
-							<h3>Link Attributes</h3>
-							<p>There are more attributes to customize a link's behavior: </p>
-							<div class="fragment"><p>To open the link in a new tab, use the <b>target</b> attribute with the value <b>_blank</b>.</p>
-							<pre><code>
-&lt;a href="home.html" target="_blank">Link Text&lt;/a>
-
-</code></pre></div>
-<div class="fragment">
-	<p><br>To have the link launch the user's mail program and open a new email to a specific address, update the <b>href</b> value.</p>
-	<pre><code>
-&lt;a href="mailto:info@girldevelopit.com">E-mail us!&lt;/a>
-
-</code></pre>
-						</section>
-
-						<!-- Images-->
-						<section>
-							<h3>Element: Image</h3>
-							<p>Like links, images use attribute/value pairs to provide necessary information to the browser.</p>
-							<ul>
-								<li>Tag: &lt;img></li>
-								<li>Src attribute: "http://girldevelopit.com/assets/pink-logo.png"</li>
-								<li>Alt attribute: "Girl Develop It logo"</li>
-							</ul>
-<pre><code>
-&lt;img src="https://www.girldevelopit.com/assets/gdi-logo.png" <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt="Girl Develop It Logo"&gt;
-
-</code></pre>
-							<img src="https://www.girldevelopit.com/assets/gdi-logo.png" alt="Girl Develop It Logo" >
-							<p><small>* Notice: This tag is our first example of a stand-alone or "self-closing" element.</small></p>
-						</section>
-
-						<!-- relative & absolute links -->
-						<section>
-							<h3>Paths: Giving The Browser Directions</h3>
-							<p>For elements like links and images, we need to give the browser paths to files.  For a link, it's a path to another website page.  For images, it's a path to an image file.</p>
-							<p class="fragment">We can either include those files in our own website or we can tell the browser to access those files from outside of our website.</p>
-							<p class="fragment"><b>Relative Paths</b>: files must be included in our website.</p>
-							<p class="fragment"><b>Absolute Paths</b>: files can be on another site.  Can also use absolute paths for files within our own site, but shouldn't.</p>
-						</section>
-						<section>
-							<h3>Relative Paths</h3>
-							<p>Relative paths tell the browser where a file is by telling that file's location <i>relative</i> to the file the browser is currently in.</p>
-							<p class="fragment">For example, if we want to tell the browser how to get to a file <b>filename.png</b> in our /images directory, and we're writing that instruction in our index.html file, we would give it a path of: <b>images/filename.png</b></p>
-							<p class="fragment">That tells the browser - look for a directory named "images", then go inside of it and grab the file "filename.png"</p>
-							<p class="fragment">If we were to rearrange our website, like changing the name of our "images" directory, or placing all of our .html files into their own directory, we would have to rewrite all those paths.</p>
-						</section>
-						<section>
-							<h3>Absolute Paths</h3>
-							<p>Absolute paths tell the browser where a file is by using that file's actual location on the internet. We use this for external resources, but can use absolute paths to link to resources within your own website.</p>
-							<p class="fragment">If we want to use the Girl Develop It logo from the GDI website, we would give the browser the following path: "https://www.girldevelopit.com/assets/gdi-logo-a3d9fa0d479a3951ad642db0bd12f310.png".</p>
-							<p class="fragment">No matter what website we put that in, no matter where in that website it goes, the path will always be the same.</p>
-						</section>
-						<section>
-							<h3>Relative vs. Absolute paths for links & images</h3>
-							<ul>
-								<li>
-									<strong class="blue">Relative</strong>
-									<ul>
-										<li>Change depending upon the page the link is on.
-											<ul>
-												<li>Links within the same directory need no path information. <code class="blue">"filename.jpg"</code></li>
-												<li>Subdirectories are listed without preceding slashes. <code class="blue">"images/filename.jpg"</code></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<strong class="blue">Absolute</strong>
-									<ul>
-										<li>Refer to a specific location of a file, including the domain. <code class="blue">"http://www.girldevelopit.com/chapters/detroit"</code></li>
-								</li>
-								<li>Typically used when pointing to a link that is not within your own domain.</li>
-								</ul>
-								</li>
-							</ul>
-						</section>
-
-						<!-- Lets develop it-->
-						<section class="hide-pdf">
-							<h3>Let's Develop It</h3>
-							<p>Make some more updates to your site, in the index.html file</p>
-							<ol>
-								<li>Add links that open in the same window, a new window and link to an e-mail address.</li>
-								<li>Take an image from your computer, or download one from the internet, and save it to your /images folder for your site.</li>
-								<li>Using a relative path, add that image to your site.</li>
-								<li>Find another image on the internet and add it to your page using an absolute path (hint: do not save this one to your /images directory)</li>
-							</ol>
-							<p>As always, save frequently and keep refreshing Chrome at each step to catch errors early.</p>
-						</section>
-
-						<!--Comments-->
-						<section>
-							<h3>Comments</h3>
-							<p>Comments are not displayed by the browser. They are visible when you view source from the browser.</p>
-							<pre><code>&lt;!-- Comment goes here --></code></pre>
-							<p>Comments organize your code into sections to make it more readable. They can also be used to 'comment out' large chunks of code to hide it from the browser.</p>
-				<pre><code>
-&lt;!-- Beginning of header -->
-  &lt;div id="header">Header Content &lt;/div>
-&lt;!-- End of header -->
-
-&lt;!--
- &lt;ol>
-    &lt;li>List Item&lt;/li>
-    &lt;li>Another List Item&lt;/li>
- &lt;/ol>
--->
-					</code></pre>
-						</section>
-
-						<!-- Character codes-->
-						<section>
-							<h3>Character codes</h3>
-							<p>There are character codes for many different characters in many different languages</p>
-							<div class="left">
-								<ul>
-									<li>Delta: &amp;delta; &delta;</li>
-									<li>Copyright symbol: &amp;copy; &copy;</li>
-									<li>Grave: &amp;grave; &grave;</li>
-									<li>An grave a: &amp;agrave; &agrave;</li>
-									<li>A full list is available at <a href="http://htmlandcssbook.com/extras/html-escape-codes/" target="_blank">htmlandcssbook.com</a></li>
-								</ul>
-							</div>
-						</section>
-
-						<section>
-							<h3>Let's Develop It!</h3>
-							<ol>
-								<li>Add a copyright statement, with the proper copyright symbol, to the bottom of your site</li>
-								<li>Find an element in your page and add a comment above it stating how you would like to style it when we learn CSS next week.</li>
-							</ol>
-							<p>Ex:</p>
-<pre><code class="html">
-  &lt;!-- Make this h1 content red and underlined --&gt;
-  &lt;h1>This is a header!&lt;/h1>
-	</pre></code>
-						</section>
 
 
 			<section>
