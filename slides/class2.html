@@ -59,16 +59,22 @@
         </section>
 
         <!-- Role of HTML v. CSS-->
-        <section>
-          <h3>Anatomy of a website</h3>
-          <p>A website is made up of three components: your  Content, the Structure, and the Presentation.</p>
-          <div><span class = "blue"> The "stuff" in your site: </span>Content</div>
-          <div><span class = "blue">+ HTML: </span>Structure</div>
-          <div><span class = "blue">+ CSS: </span>Presentation</div>
-          <div class = "blue">= Your Website</div>
-          <p style="text-align:left;">A website is a way to present your content to the world, using HTML and CSS to structure that content &amp; make it look good.</p>
-          <p>In today's class, we'll focus on HTML - the structure of your site</p>
-        </section>
+				<section>
+					<h3>Anatomy of a website</h3>
+					<p>A website is made up of three components: your Content, the Structure, and the Presentation.</p>
+					<ul>
+						<li class="fragment">
+							<p>The actual information you want on your site is the <strong>Content</strong></p>
+						</li>
+						<li class="fragment">
+							<p>Putting that content into an HTML &lt;p&gt; element because it is a paragraph is <strong>Structure</strong></p>
+						</li>
+						<li class="fragment">
+							<p>Making the font of that paragraph blue and 18pt is <strong>Presentation</strong></p>
+						</li>
+					</ul>
+					<p class="fragment">For today's class, we'll focus on CSS - the presentation of your site</p>
+				</section>
 
         <!-- What is CSS-->
         <section>
@@ -92,6 +98,7 @@
         <!-- Connecting CSS to HTML - Linked -->
         <section>
           <h3>Connecting CSS to HTML: Linked</h3>
+					<p >For this class, CSS is included in a separate file (styles.css) from our html. The browser is reading the HTML file, so we need to include an instrution in index.html that tells the browser to use our styles.css file as well.</p>
 <pre><code class = "html">&lt;head>
   &lt;link rel="stylesheet" type="text/css" href="styles/style.css">
 &lt;/head></code></pre>
@@ -101,22 +108,23 @@
         <!-- Exercise-->
         <section>
           <h3>Let's develop it</h3>
-					<p class="red">NOTE: We are still working in the same index.html file and directory structure from last week</p>
+					<p class="red">NOTE: We are still working on the files from last week</p>
           <ol>
-            <li>Open a new file in Sublime Text. Save it to your "styles" folder, and name it "styles.css".</li>
+            <li>In SublimeText, open styles/styles.css </li>
 						<li>Add the following code to the file, and save:
 <pre><code class="html"> body {
-  color: purple;
+  background: purple;
+  color: orange;
 }</code></pre>
             </li>
-            <li>In Sublime Text, open index.html and add a link to styles.css in the head
+            <li>In Sublime Text, open index.html and add a link to styles.css in the &lt;head>
 <pre><code class = "html">&lt;head>
   &lt;link rel="stylesheet" type="text/css" href="styles/styles.css">
 &lt;/head></code></pre>
             </li>
             <li>Open index.html in Chrome to see your changes</li>
-            <li>Finished early? Google "css styles" and see if there are other things you can do to your page!</li>
           </ol>
+					<p>Finished early? Google "css styles" and see if there are other things you can do to your page!</p>
         </section>
 
 <!-- general syntax explanation -->
@@ -137,37 +145,22 @@
         <!-- The CSS Rule-->
         <section>
         	<h3>CSS Syntax: The CSS Rule</h3>
-        	<img src="images/cssrule.png" alt="The CSS Rule" style="border: none; box-shadow: none;"/>
-        </section>
-        <section>
-          <h3>CSS Syntax: The CSS Rule</h3>
-<pre><code class = "html">selector {
-  property: value;
-}</code></pre>
-          <div class = "left-align">
+        	<img src="images/cssrule.png" alt="The CSS Rule" style="border: none; box-shadow: none; width: 70%;"/>
             <p>A block of CSS code is a rule.</p>
             <p>The rule starts with a selector.</p>
             <p>It has sets of properties and values.</p>
             <p>A property-value pair is a declaration.</p>
-          </div>
         </section>
 
         <!-- CSS Syntax -->
 
         <section>
-          <h3>CSS Syntax: The CSS Selector</h3>
-          <p>
-            The CSS Selector tells the browswer what "thing" on your site you plan to apply a style to.
-          </p>
-          <img src="images/cssrule.png" alt="The CSS Rule" style="border: none; box-shadow: none;"/>
-        </section>
-
-        <section>
-          <h3>CSS Syntax: The CSS Declaration</h3>
+          <h3>CSS Syntax: </h3>
           <div class = "left-align">
-            <p>Declarations:  Property and value of style you plan use on HTML element. </p>
-          <p>Declarations end with a semicolon</p>
-          <p>Declaration groups are surrounded by curly brackets.</p>
+						<p>Selector: the selector tells the browswer what "thing" on your site you plan to apply a style to.</p>
+	          <p>Declarations:  Property and value of style you plan use on HTML element. </p>
+	          <p>Declarations end with a semicolon</p>
+	          <p>Groups of declarations are surrounded by curly brackets.</p>
           </div>
 
 <pre><code class = "css">selector {
@@ -194,15 +187,18 @@
 
         <!-- Selectors elements-->
         <section>
-			  <h3>Selector: Element</h3>
+			  <h3>CSS Selector: Element</h3>
+				<p>The element selector allows you to apply a particular style or styles to all elements of a specific type.</p>
+				<div class="fragment">
 <pre><code class = "css">
 p {
   property: value;
 }
-
 </code></pre>
       <p>Selects all paragraph elements.</p>
 			<br /><br />
+			</div>
+			<div class="fragment">
 <pre><code class = "css">
 img {
   property: value;
@@ -210,20 +206,24 @@ img {
 
 </code></pre>
         <p>Selects all image elements.</p>
+			</div>
         </section>
 
         <!-- Multiple values -->
         <section>
         <h3>Property Values</h3>
         <p style="text-align: left;">Each property can have one or more comma separated values.</p>
-        <p style="text-align: left;">A property is the name of the style you want to apply to the selector, and the value is the actual version of that style you want applied.</p>
-        <p style="text-align: left;">The following rule gives all paragraphs text that is white and a background color of red.</p>
-<pre><code class = "css">p{
+        <p style="text-align: left;" class="fragment">A property is the name of the style you want to apply to the selector, and the value is the actual version of that style you want applied.</p>
+
+				<div class="fragment">
+					<p style="text-align: left;" >The following rule gives all paragraphs text that is white and a background color of red.</p>
+<pre ><code class = "css">p{
   color: white;
   background-color: red;
 }</code></pre>
 <br />
-<p style="color: white; background-color: red; text-align: left;">&nbsp;Just like this!</p>
+</div>
+<p class="fragment" style="color: white; background-color: red; text-align: left;">&nbsp;Just like this!</p>
       </section>
 
         <!-- Background color-->
@@ -277,17 +277,19 @@ img {
         <!-- Selector position-->
         <section>
           <h3>CSS Selector: Position</h3>
-          <p>Just like the Element selector we learned about, "positioning" is another way to target HTML elements.</p>
-          <p>But adding in the element's position gives us more control over what parts of our web page get a style applied to them.</p>
-          <p>Using an element selector, you can target all &lt;em&gt; elements in your page.</p>
-          <p>However, if you add in positioning you can target ONLY the &lt;em&gt; elements that are in a paragraph, so &lt;em&gt; used in a heading can have a different style.</p>
+					<ul>
+						<li class="fragment">Like the Element selector we just learned about, "positioning" is another way to target HTML elements.</li>
+						<li class="fragment">Adding in the element's position gives us more control over what parts of our web page get a style applied to them.</li>
+						<li class="fragment">Using an element selector, you can target all &lt;em&gt; elements in your page.</li>
+						<li class="fragment">By using positioning you can target ONLY the &lt;em&gt; elements that are in a paragraph, so &lt;em&gt; used in a heading can have a different style.</li>
+					</ul>
         </section>
         <section>
         <h3>CSS Selector: Position</h3>
 <pre><code class = "css">p em {
   color: yellow;
 }</code></pre>
-       <p><em>p em</em> tells the browser to look for all &lt;p&gt; elements, then each time it sees a paragraph element to look inside of it for an &lt;em&gt; element.  Only those &lt;em&gt; elements should then have the following style applied to it. <br /><br /></p>
+       <p><em>p em</em> tells the browser to look for all &lt;p&gt; elements, then each time it sees a paragraph element to look inside of it for an &lt;em&gt; element.  Only those &lt;em&gt; elements will then have the following style applied to it. <br /><br /></p>
 <pre><code class = "html">
 &lt;p>This is &lt;em>important&lt;/em>.&lt;/p>
 
@@ -350,10 +352,12 @@ p {
         <!-- Selectors Class-->
         <section>
           <h3>CSS Selector: Class</h3>
-          <p>A class is another way of targeting parts of your HTML so that you can assign styles to them.</p>
-          <p>With a class, you no longer have to assign a style to all elements of the same type - you have more control over where a style is applied.</p>
-          <p class="red"><i>Unlike the Element selector, however, use of the Class selector requires making a change to your HTML as well as the CSS.</i></p>
-          <p>The CSS Rule you give a class selector to is applied to any HTML elements that you assign that same class to: they don't have to all be the same type of element.</p>
+					<ul>
+						<li class="fragment">A class is another way of targeting parts of your HTML so that you can assign styles to them.</li>
+						<li class="fragment red">Unlike the Element selector, however, use of the Class selector requires making a change to your HTML as well as the CSS.</li>
+						<li class="fragment">You write a rule for the class name in your CSS, and add an attribute of <b>class</b> to the target HTML element(s), and give that attribute a value of the same class name as from your CSS.</li>
+						<li class="fragment">All elements with that class will get the styles - and those elements can be of different types (p, div, h1, etc)</li>
+					</ul>
         </section>
 
 
@@ -375,7 +379,7 @@ p {
         </section>
 
 <section>
-  <h3>CSS Selector and HTML Attribute: Class</h3>
+  <h3>Class: CSS vs HTML</h3>
   <p>HTML Attribute: </p>
   <ul>
     <li>Add the "class" attribute to all HTML elements in our page that we want targeted for a particular CSS rule.</li>
@@ -384,6 +388,7 @@ p {
   </ul>
   <br />
   <br />
+<div class="fragment">
   <p>CSS Selector: </p>
   <ul>
     <li>
@@ -393,6 +398,7 @@ p {
       This is followed immediately by the class name. The class name is case sensitive - it must match the value we gave to the "class" attribute in our HTML.
     </li>
   </ul>
+</div>
 </section>
 
 
@@ -466,11 +472,13 @@ p {
         <!-- Selectors ID-->
         <section>
           <h3>CSS Selector: ID</h3>
-          <p>An ID is another way of targeting a part of your HTML so that you can assign styles to it.</p>
-          <p>With an ID, you can target a specific HTML element, instead of all HTML elements of a particualr type.</p>
-          <p>Like the Class selector, using an ID requires making a change to your HTML as well as your CSS.</p>
-          <p>Like a Class, the CSS Rule associated with your ID is applied to the element in your HTML that has that same ID.</p>
-          <p>Unlike a Class, an ID can only be used once on an HTML page.</p>
+					<ul>
+						<li class="fragment">An ID is another way of targeting a part of your HTML so that you can assign styles to it.</li>
+						<li class="fragment">With an ID, you can target a specific HTML element, instead of all HTML elements of a particualr type.</li>
+						<li class="fragment">Like the Class selector, using an ID requires making a change to your HTML as well as your CSS.</li>
+						<li class="fragment">Like a Class, the CSS Rule associated with your ID is applied to the element in your HTML that has that same ID.</li>
+						<li class="fragment">Unlike a Class, an ID can only be used once on an HTML page.</li>
+					</ul>
         </section>
 
         <section>
@@ -491,7 +499,7 @@ p {
         </section>
 
 <section>
-  <h3>CSS Selector and HTML Attribute: ID</h3>
+  <h3>ID: HTML vs CSS</h3>
   <p>HTML Attribute: </p>
   <ul>
     <li>Add the "id" attribute to the single HTML element in our page that we want targeted for the CSS rule.</li>
@@ -499,7 +507,7 @@ p {
     <li>Just like other attribute-value pairs, the HTML syntax is: id="idName" </li>
   </ul>
   <br />
-  <br />
+	<div class="fragment">
   <p>CSS Selector: </p>
   <ul>
     <li>
@@ -509,6 +517,7 @@ p {
       This is followed immediately by the ID name. The ID name is case sensitive, and spelling counts.  It must match the value we gave to the "id" attribute in our HTML.
     </li>
   </ul>
+</div>
 </section>
 
         <!-- ID vs Class-->
@@ -586,28 +595,6 @@ border-bottom: 6px dotted #000000;</code></pre>
         </section>
 
 
-
-
-
-<section>
-<h3>CSS Concepts</h3>
-<p>IDs vs Classes</p>
-<p>Cascading</p>
-</section>
-
-<section>
-<h3>CSS Concepts: IDs vs. Classes</h3>
-        <div class = "left-align">
-          <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. I.E. A webpage only has one footer.
-          <p>The "#" is how you tell the browser that "this is an id."</p>
-        </div>
-        <div class = "left-align">
-          <span class = "yellow">Class</span> -- Many elements can have the same class. I.E. There can be many warnings on one webpage.
-          <p>The "." is how you tell the browser that "this is a class name."</p>
-        </div>
-      </section>
-</section>
-
 <section>
 <h3>CSS Concepts: Cascading</h3>
           <p>Styles "cascade" down until changed</p>
@@ -650,7 +637,7 @@ If you have time, now that we've gone over IDs vs Classes again, change how you 
 
 <section>
 <h3>HTML Syntax: Linking CSS to HTML</h3>
-<p>We have done this entire class using an external style sheet, but there are two other ways to apply CSS to your HTML:</p>
+<p>We have done this entire class using an external style sheet, but there are actually three ways to apply CSS to your HTML:</p>
 <ol>
 <li>
 Inline CSS
@@ -658,52 +645,19 @@ Inline CSS
 <li>
 Embedded CSS
   </li>
+	<li>External Stylesheet</li>
 </ol>
 </section>
-
-<section>
-<h3>
-HTML Syntax: Inline CSS
-</h3>
-<p>With inline CSS, we're using another HTML attribute-value pair. It just has a more complicated value than we've seen before: </p>
-<pre><code class="html">&lt;p style="color:green; background-color:orange;"&gt;
-  Some content!!
-&lt;/p&gt;</code></pre><br /><br />
-<p style="color:green; background-color:orange;">Some content!!</p>
-  </section>
-
-
-<section>
-<h3>
-HTML Syntax: Embedded CSS
-</h3>
-<p>Here we take advantage of the &lt;head&gt; section of our page.  The styles look the same as in our external style sheet, but they're nested inside of a &lt;style&gt; tag: </p>
-<pre><code class="html">&lt;head&gt;
-  &lt;style&gt;
-    p {
-      color:green;
-      background-color:orange; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;Some content!!&lt;/p&gt;
-&lt;/body&gt;</code></pre><br />
-<p style="color:green; background-color:orange;">Some content!!</p>
-  </section>
-
-        <!-- Connecting HTML to CSS-->
-        <section>
-          <h3>Connecting CSS to HTML</h3>
-          <p class = "highlight">3 ways</p>
-          <p>"Inline"</p>
-          <p>"Embedded"</p>
-          <p>"External"</p>
-        </section>
 
         <!-- Inline -->
         <section>
           <h3>Connecting CSS to HTML: Inline</h3>
-<pre><code class = "html">&lt;p style="color:red">Some text.&lt;/p></code></pre>
+<pre><code class = "html">
+&lt;p style="color:red; font-size:18px;">
+  Some text.
+&lt;/p>
+
+</code></pre>
           <p>Uses the HTML attribute style.</p>
           <p>Difficult to use in large projects</p>
           <p>Not preferred.</p>
