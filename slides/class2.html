@@ -319,7 +319,6 @@
   <h3>CSS Syntax vs HTML Syntax</h3>
   <p>"Syntax" is the rules of how we express ourselves in a language.  In English, this is grammar and spelling. In HTML, it's elements and tags. </p>
   <p>In CSS, we also need to communicate instructions to the browser in a language it can understand. We use a different syntax, because it is a different language. </p>
-  <p>CSS is used to apply styles (appearance) to a webpage, instead of structure.  So our syntax is now organized around visual concepts instead of content.  (What??)</p>
 </section>
 
 <section>
@@ -344,7 +343,7 @@
         <section>
           <h3>CSS Syntax: </h3>
           <div class = "left-align">
-						<p>Selector: the selector tells the browswer what "thing" on your site you plan to apply a style to.</p>
+						<p>Selector: We have to tell the browser how to connect the CSS to your HTML.  The selector tells the browser what element(s) in your site the style should apply to.</p>
 	          <p>Declarations:  Property and value of style you plan use on HTML element. </p>
 	          <p>Declarations end with a semicolon</p>
 	          <p>Groups of declarations are surrounded by curly brackets.</p>
@@ -532,6 +531,146 @@ p {
             <li>Don't forget to open index.html in Chrome (or refresh the page if it is already open) to see what you've done!</li>
           </ol>
         </section>
+
+
+					<!-- Multiple values -->
+					<section>
+					<h3>CSS Syntax: Property Values</h3>
+					<p>Each property can have one or more comma separated values.</p>
+<pre><code class = "html">p{
+color: white;
+background-color: red;
+font-family: Arial, sans-serif;
+}</code></pre>
+				</section>
+
+
+					<!-- Font family-->
+					<section>
+						<h3>Property: Font-family</h3>
+						<p>The font-family property deﬁnes which font is used.</p>
+<pre><code class = "html">p {
+font-family: "Times New Roman";
+font-family: serif;
+font-family: "Arial", sans-serif;
+}</code></pre>
+						<p>Specific font name</p>
+						<p>Generic name</p>
+						<p>Comma-separated list</p>
+					</section>
+
+					<!-- Font size -->
+					<section>
+						<h3>Property: Font-size</h3>
+						<p>The font-size property speciﬁes the size of the font.</p>
+<pre><code class = "html">p {
+font-size: 12px;
+font-size: 1.5em;
+font-size: 100%;
+}</code></pre>
+						<p>Pixels</p>
+						<p>"em"</p>
+						<p>Percentage</p>
+					</section>
+
+					<!-- Fonts-->
+					<section>
+						<h3>Property: Fonts (shorthand)</h3>
+<pre><code class = "html">p {
+font-style: italic;
+font-weight: bold;
+font-size: 10px;
+font-family: sans-serif;
+}</code></pre>
+						OR
+<pre><code class = "html">p {
+font: italic bold 10px sans-serif;
+}</code></pre>
+					</section>
+
+
+				<section>
+				<h3>CSS Concepts: Cascading</h3>
+				          <p>Styles "cascade" down until changed</p>
+<pre><code class = "html">p{
+  color:blue;
+  font-family: 'Helvetica';
+  font-size: 24px;
+}
+.red{
+  color:red;
+}
+#special{
+  font-family: Times;
+  font-size: 44px;
+}</code></pre>
+
+<pre><code class = "html">&lt;p>Paragraph 1&lt;/p>
+&lt;p class="red">Paragraph 2&lt;/p>
+&lt;p class="red" id="special">Paragraph 3&lt;/p></code></pre>
+				<p style="color:blue; font-family: 'Helvetica'; font-size: 24px;">Paragraph 1</p>
+				<p style="color:red; font-family: 'Helvetica'; font-size: 24px;">Paragraph 2</p>
+				<p style="color:red; font-family: 'Times';font-size: 44px;">Paragraph 3</p>
+				        </section>
+
+				<section>
+				<h3>Let's Develop It</h3>
+				<ol>
+					<li>Use our new propery styles to update your page</li>
+				<li>
+					Play with the cascade by adding a rule for the &lt;body&gt; tag at the very top of your .css file. In this rule, set a property that you have used in another rule, but give it a different value.
+				</li>
+				<li>
+					Open/refresh your html file in Chrome - see which elements are changed by your new CSS rule, and which aren't.
+				</li>
+				  </ol>
+				</section>
+
+
+				<section>
+				<h3>HTML Syntax: Linking CSS to HTML</h3>
+				<p>We have done this entire class using an external style sheet, but there are actually three ways to apply CSS to your HTML:</p>
+				<ol>
+				<li>
+				Inline CSS
+				</li>
+				<li>
+				Embedded CSS
+				  </li>
+					<li>External Stylesheet</li>
+				</ol>
+				<p>While we won't use the other two methods in this class, it is important that you know they exist and what they look like.</p>
+				</section>
+
+				        <!-- Inline -->
+				        <section>
+				          <h3>Connecting CSS to HTML: Inline</h3>
+<pre><code class = "html">
+&lt;p style="color:red; font-size:18px;">
+  Some text.
+&lt;/p>
+
+</code></pre>
+				          <p>Uses the HTML attribute style.</p>
+				          <p>Difficult to use in large projects</p>
+				          <p>Not preferred.</p>
+				        </section>
+
+				        <!-- Embedded -->
+				        <section>
+				          <h3>Connecting CSS to HTML: Embedded</h3>
+<pre><code class = "html">&lt;head>
+  &lt;style type="text/css">
+    p {
+      color: blue;
+      font-size: 12px;
+    }
+  &lt;/style>
+&lt;/head></code></pre>
+				          <p>Inside &lt;head> element.</p>
+				          <p>Uses &lt;style> tag.</p>
+				          <p>Can only be used in one html file</p>
+				        </section>]
 
 								       <!-- Question-->
 								        <section>

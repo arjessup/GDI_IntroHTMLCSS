@@ -59,337 +59,7 @@
         </section>
 				<!-- part 3: more control (Classes and font styles) -->
 
-				        <!-- Selectors Class-->
-				        <section>
-				          <h3>CSS Selector: Class</h3>
-									<ul>
-										<li class="fragment">A class is another way of targeting parts of your HTML so that you can assign styles to them.</li>
-										<li class="fragment red">Unlike the Element selector, however, use of the Class selector requires making a change to your HTML as well as the CSS.</li>
-										<li class="fragment">You write a rule for the class name in your CSS, and add an attribute of <b>class</b> to the target HTML element(s), and give that attribute a value of the same class name as from your CSS.</li>
-										<li class="fragment">All elements with that class will get the styles - and those elements can be of different types (p, div, h1, etc)</li>
-									</ul>
-				        </section>
-
-
-				        <section>
-				          <h3>CSS Selector: Class</h3>
-<pre><code class = "html">.warning {
-  color: red;
-}</code></pre>
-				          <p>Selects all elements with a class of "warning".<br /><br /></p><br />
-
-<pre><code class = "html">
-&lt;p class="warning">Run away!&lt;/p>
-&lt;h3 class="warning">No, really. RUN AWAY!&lt;h3>
-
-</code></pre>
-				         <br />
-				         <p style="color:red;">Run away!</p>
-								 <h3 style="color:red;">No, really. RUN AWAY!</h3>
-				        </section>
-
-				<section>
-				  <h3>Class: CSS vs HTML</h3>
-				  <p>HTML Attribute: </p>
-				  <ul>
-				    <li>Add the "class" attribute to all HTML elements in our page that we want targeted for a particular CSS rule.</li>
-				    <li>The value of the "class" attribute is the class name.</li>
-				    <li>Just like other attribute-value pairs, the syntax is: class="className" </li>
-				  </ul>
-				  <br />
-				  <br />
-				<div class="fragment">
-				  <p>CSS Selector: </p>
-				  <ul>
-				    <li>
-				      In the selector, we tell the browser that the selector is a class by starting with a "."
-				    </li>
-				    <li>
-				      This is followed immediately by the class name. The class name is case sensitive - it must match the value we gave to the "class" attribute in our HTML.
-				    </li>
-				  </ul>
-				</div>
-				</section>
-
-
-				        <!-- Multiple values -->
-				        <section>
-				        <h3>CSS Syntax: Property Values</h3>
-				        <p>Each property can have one or more comma separated values.</p>
-<pre><code class = "html">p{
-  color: white;
-  background-color: red;
-  font-family: Arial, sans-serif;
-}</code></pre>
-				      </section>
-
-
-				        <!-- Font family-->
-				        <section>
-				          <h3>Property: Font-family</h3>
-				          <p>The font-family property deﬁnes which font is used.</p>
-				<pre><code class = "html">p {
-				  font-family: "Times New Roman";
-				  font-family: serif;
-				  font-family: "Arial", sans-serif;
-				}</code></pre>
-				          <p>Specific font name</p>
-				          <p>Generic name</p>
-				          <p>Comma-separated list</p>
-				        </section>
-
-				        <!-- Font size -->
-				        <section>
-				          <h3>Property: Font-size</h3>
-				          <p>The font-size property speciﬁes the size of the font.</p>
-				<pre><code class = "html">p {
-				  font-size: 12px;
-				  font-size: 1.5em;
-				  font-size: 100%;
-				}</code></pre>
-				          <p>Pixels</p>
-				          <p>"em"</p>
-				          <p>Percentage</p>
-				        </section>
-
-				        <!-- Fonts-->
-				        <section>
-				          <h3>Property: Fonts (shorthand)</h3>
-				<pre><code class = "html">p {
-				  font-style: italic;
-				  font-weight: bold;
-				  font-size: 10px;
-				  font-family: sans-serif;
-				}</code></pre>
-				          OR
-				<pre><code class = "html">p {
-				  font: italic bold 10px sans-serif;
-				}</code></pre>
-				        </section>
-
-				        <!-- Exercise-->
-				        <section>
-				          <h3>Let's develop it</h3>
-				          <ol>
-				            <li>Open up your styles.css and index.html files again in Sublime Text</li>
-				            <li>Add a few different class attributes and values to some elements in your HTML page. Reuse some classes!</li>
-				            <li>Create rules for those classes in your .css file. Don't forget - spelling and case matter.</li>
-				            <li>Use our 5 new font properties to change the look of your text through those classes.  These slides don't include all the values for the font properties - Google what you don't know.</li>
-				            <li>Don't forget to open index.html in Chrome (or refresh the page if it is already open) to see what you've done!</li>
-				          </ol>
-				        </section>
-
-				        <!-- Selectors ID-->
-				        <section>
-				          <h3>CSS Selector: ID</h3>
-									<ul>
-										<li class="fragment">An ID is another way of targeting a part of your HTML so that you can assign styles to it.</li>
-										<li class="fragment">With an ID, you can target a specific HTML element, instead of all HTML elements of a particualr type.</li>
-										<li class="fragment">Like the Class selector, using an ID requires making a change to your HTML as well as your CSS.</li>
-										<li class="fragment">Like a Class, the CSS Rule associated with your ID is applied to the element in your HTML that has that same ID.</li>
-										<li class="fragment">Unlike a Class, an ID can only be used once on an HTML page.</li>
-									</ul>
-				        </section>
-
-				        <section>
-				          <h3>CSS Selector: ID</h3>
-				<pre><code class = "html">
-				#footer {
-				  background-color: orange;
-				}
-
-				</code></pre>
-				          <p>Selects all elements with an id of "footer".</p><br /><br />
-
-				<pre><code class = "html">
-				&lt;p id="footer">Copyright 2015&lt;/p>
-
-				</code></pre>
-				         <p style="background-color:orange;">Copyright 2015</p>
-				        </section>
-
-				<section>
-				  <h3>ID: HTML vs CSS</h3>
-				  <p>HTML Attribute: </p>
-				  <ul>
-				    <li>Add the "id" attribute to the single HTML element in our page that we want targeted for the CSS rule.</li>
-				    <li>The value of the "id" attribute is the ID name.</li>
-				    <li>Just like other attribute-value pairs, the HTML syntax is: id="idName" </li>
-				  </ul>
-				  <br />
-					<div class="fragment">
-				  <p>CSS Selector: </p>
-				  <ul>
-				    <li>
-				      In the selector, we tell the browser that the selector is an ID by starting with a "#"
-				    </li>
-				    <li>
-				      This is followed immediately by the ID name. The ID name is case sensitive, and spelling counts.  It must match the value we gave to the "id" attribute in our HTML.
-				    </li>
-				  </ul>
-				</div>
-				</section>
-
-				        <!-- ID vs Class-->
-				        <section>
-				        <h3>IDs vs. Classes</h3>
-				        <div class = "left-align">
-				          <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. I.E. A webpage only has one footer.
-				          <p>The "#" is how you tell the browser that "this is an id."</p>
-				        </div>
-				        <div class = "left-align">
-				          <span class = "yellow">Class</span> -- Many elements can have the same class. I.E. There can be many warnings on one webpage.
-				          <p>The "." is how you tell the browser that "this is a class name."</p>
-				        </div>
-				      </section>
-
-				<section>
-				  <h3>CSS Syntax: Properties</h3>
-				  <p>So far we've looked at properties that were fairly simple, with only a few values.</p>
-				  <p>Now we'll look at a CSS property family that has much more flexibility in the number of values, including some location information!</p>
-				</section>
-
-
-				        <section>
-				          <h3>CSS Properties: Borders</h3>
-				          <p>You can specify each property separately...</p>
-
-				<pre><code class ="css">#myID {
-				  border-width: 10px;
-				  border-style: dashed;
-				  border-color: #666666;
-				}</code></pre>
-				<br />
-				<pre><code class ="css">#myID {
-				  border: 10px dashed #666666;
-				}</code></pre>
-				          <p> ...or all three together.</p>
-				        </section>
-				        <section>
-				          <h3>CSS Properties: Borders</h3>
-				          <p>Borders can be applied to all 4 sides of an element.</p>
-				          <p>CSS allows us to choose which of those sides are styled - we don't have to style them all!</p><br />
-				          <p style="border:10px dashed #666666;">This paragraph has a style of <br />border:10px dashed #666666;</p><br /><br />
-				          <p style="border-left:10px solid red;">This paragraph has a style of<br /> border-left:10px solid red;</p>
-				        </section>
-
-				        <section>
-				          <h3>CSS Properties: Borders</h3>
-				          <p>You can also apply different values to each side of a border.</p><br />
-				          <p style="border-color: red; border-width: 10px 5px 1px 20px; border-style: solid;">This paragraph has a style of <br />border-color: red; <br />border-style: solid; <br />border-width: 10px&nbsp;&nbsp;5px&nbsp;&nbsp;1px&nbsp;&nbsp;20px;</p>
-				        </section>
-				        <section>
-				          <h3>Border</h3>
-				          <p style="border: 4px solid #ff0000; background-color: grey;">A solid red border</p>
-				<pre><code class = "html">border: 4px solid #ff0000;</code></pre><br />
-				<br />
-				          <p style="border-top: 6px dotted #000000; background-color: grey;">A thick dotted black top border</p>
-				<pre><code class ="html">border-top: 6px dotted #000000;</code></pre>
-				<br />
-				<br />
-				          <p style="border-top: 4px solid #ff0000; border-bottom: 6px dotted #000000; background-color: grey;">Two diﬀerent border styles</p>
-				<pre><code class ="html">border-top: 4px solid #ff0000;
-				border-bottom: 6px dotted #000000;</code></pre>
-				        </section>
-
-
-				        <!-- Exercise-->
-				        <section>
-				          <h3>Let's develop it</h3>
-				          <ol>
-				            <li>In your styles.css and index.html files ...</li>
-				            <li>Add an ID or two to some elements</li>
-				            <li>Give those elements borders using the ID selector</li>
-				            <li>Don't forget to open index.html in Chrome (or refresh the page if it is already open) to see what you've done!</li>
-				          </ol>
-				        </section>
-
-
-				<section>
-				<h3>CSS Concepts: Cascading</h3>
-				          <p>Styles "cascade" down until changed</p>
-				<pre><code class = "html">p{
-				  color:blue;
-				  font-family: 'Helvetica';
-				  font-size: 24px;
-				}
-				.red{
-				  color:red;
-				}
-				#special{
-				  font-family: Times;
-				  font-size: 44px;
-				}</code></pre>
-
-				<pre><code class = "html">&lt;p>Paragraph 1&lt;/p>
-				&lt;p class="red">Paragraph 2&lt;/p>
-				&lt;p class="red" id="special">Paragraph 3&lt;/p></code></pre>
-				<p style="color:blue; font-family: 'Helvetica'; font-size: 24px;">Paragraph 1</p>
-				<p style="color:red; font-family: 'Helvetica'; font-size: 24px;">Paragraph 2</p>
-				<p style="color:red; font-family: 'Times';font-size: 44px;">Paragraph 3</p>
-				        </section>
-
-				<section>
-				<h3>Let's Develop It</h3>
-				<ol>
-				<li>
-				Add a rule for the &lt;body&gt; tag at the very top of your .css file. In this rule, set a property that you have used in another rule, but give it a different value.
-				</li>
-				<li>
-				Open/refresh your html file in Chrome - see which elements are changed by your new CSS rule, and which aren't.
-				</li>
-				<li>
-				If you have time, now that we've gone over IDs vs Classes again, change how you are using those selectors in your website so they match how they *should* be used
-				</li>
-				  </ol>
-				</section>
-
-
-				<section>
-				<h3>HTML Syntax: Linking CSS to HTML</h3>
-				<p>We have done this entire class using an external style sheet, but there are actually three ways to apply CSS to your HTML:</p>
-				<ol>
-				<li>
-				Inline CSS
-				</li>
-				<li>
-				Embedded CSS
-				  </li>
-					<li>External Stylesheet</li>
-				</ol>
-				</section>
-
-				        <!-- Inline -->
-				        <section>
-				          <h3>Connecting CSS to HTML: Inline</h3>
-<pre><code class = "html">
-&lt;p style="color:red; font-size:18px;">
-  Some text.
-&lt;/p>
-
-</code></pre>
-				          <p>Uses the HTML attribute style.</p>
-				          <p>Difficult to use in large projects</p>
-				          <p>Not preferred.</p>
-				        </section>
-
-				        <!-- Embedded -->
-				        <section>
-				          <h3>Connecting CSS to HTML: Embedded</h3>
-<pre><code class = "html">&lt;head>
-  &lt;style type="text/css">
-    p {
-      color: blue;
-      font-size: 12px;
-    }
-  &lt;/style>
-&lt;/head></code></pre>
-				          <p>Inside &lt;head> element.</p>
-				          <p>Uses &lt;style> tag.</p>
-				          <p>Can only be used in one html file</p>
-				        </section>
-
-
+<!-- ***** * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  ** *  * * ** * * -->
 
 
          <section>
@@ -428,7 +98,7 @@
 
         <!-- Inline vs. block-->
         <section>
-          <h3>Inline vs Block</h3>
+          <h3>HTML: Inline vs Block</h3>
           <div class = "left" style="width: 50%; text-align: left;">
             <div class = "fragment">
               <p>So far, we have mostly seen <span class="green">"block"</span> elements</p>
@@ -525,17 +195,148 @@
               </li>
             </ul>
         </li>
+				<li>Use comments near each div to note what they will be used for (header, etc)</li>
         <li>
-          Give each an appropriate id so we know what type of content it will hold.
-        </li>
-        <li>
-          Put some content in each div - you can use sites like <a href="http://www.catipsum.com/">http://www.catipsum.com/</a> to generate content.
-        </li>
-        <li>
-          Using the CSS we learned last week, apply some fun styles to the divs!
+          Put some content in each div - you can use sites like <a href="http://www.catipsum.com/">http://www.catipsum.com/</a> to generate content if needed.
         </li>
       </ol>
     </section>
+
+					<!-- Selectors Class-->
+					<section>
+						<h3>CSS Selectors: Class & ID</h3>
+						<ul>
+							<li class="fragment">Classes and IDs allow us to completely customize how we target our styles to our HTML.</li>
+							<li class="fragment red">Unlike the Element selector, use of the Class and ID selectors require making a change to your HTML as well as the CSS.</li>
+							<li class="fragment">You write a rule for the class name in your CSS, but then add an attribute of <b>class</b> or <b>id</b> to the target HTML element(s), and give that attribute a value of the same class/id name as from your CSS.</li>
+							<li class="fragment">Any HTML element(s) can be given that class/id value.</li>
+
+						</ul>
+					</section>
+					<section>
+						<h3>CSS Selector: Class</h3>
+						<ul>
+							<li>All elements with the class attribute AND the same class name will get the styles - and those elements can be of different types (p, div, h1, etc)</li>
+							<li>Class should be used for styles that will be used multiple times in the same page.</li>
+						</ul>
+					</section>
+
+	<section>
+		<h3>Class: CSS vs HTML</h3>
+		<p>HTML Attribute: </p>
+		<ul>
+			<li>Add the "class" attribute to all HTML elements in our page that we want targeted for a particular CSS rule.</li>
+			<li>The value of the "class" attribute is the class name.</li>
+			<li>Just like other attribute-value pairs, the syntax is: class="className" </li>
+		</ul>
+		<br />
+		<br />
+	<div class="fragment">
+		<p>CSS Selector: </p>
+		<ul>
+			<li>
+				In the selector, we tell the browser that the selector is a class by starting with a "."
+			</li>
+			<li>
+				This is followed immediately by the class name. The class name is case sensitive - it must match the value we gave to the "class" attribute in our HTML.
+			</li>
+		</ul>
+	</div>
+	</section>
+
+
+					<section>
+						<h3>CSS Selector: Class</h3>
+															<p>Selects all elements with a class of "warning".</p>
+<pre><code class = "html">.warning {
+color: red;
+}</code></pre>
+						<br />
+<pre><code class = "html">
+&lt;p>Run away!&lt;/p>
+&lt;p class="warning">Run away!&lt;/p>
+&lt;h3 class="warning">No, really. RUN AWAY!&lt;h3>
+
+</code></pre>
+					 <br />
+					 <p>Run away!</p>
+					 <p style="color:red;">Run away!</p>
+					 <h3 style="color:red;">No, really. RUN AWAY!</h3>
+					</section>
+
+					<!-- Selectors ID-->
+					<section>
+						<h3>CSS Selector: ID</h3>
+						<ul>
+							<li class="fragment">Like the Class selector, using an ID requires making a change to your HTML as well as your CSS.</li>
+							<li class="fragment">Like a Class, the CSS Rule associated with your ID is applied to the element in your HTML that has that same ID.</li>
+							<li class="fragment">Unlike a Class, an ID can only be used once on an HTML page.</li>
+						</ul>
+					</section>
+
+	<section>
+		<h3>ID: HTML vs CSS</h3>
+		<p>HTML Attribute: </p>
+		<ul>
+			<li>Add the "id" attribute to the single HTML element in our page that we want targeted for the CSS rule.</li>
+			<li>The value of the "id" attribute is the ID name.</li>
+			<li>Just like other attribute-value pairs, the HTML syntax is: id="idName" </li>
+		</ul>
+		<br />
+		<div class="fragment">
+		<p>CSS Selector: </p>
+		<ul>
+			<li>
+				In the selector, we tell the browser that the selector is an ID by starting with a "#"
+			</li>
+			<li>
+				This is followed immediately by the ID name. The ID name is case sensitive, and spelling counts.  It must match the value we gave to the "id" attribute in our HTML.
+			</li>
+		</ul>
+	</div>
+	</section>
+
+					<section>
+						<h3>CSS Selector: ID</h3>
+<pre><code class = "html">
+#footer {
+background-color: orange;
+}
+
+</code></pre>
+						<p>Selects all elements with an id of "footer".</p><br /><br />
+
+<pre><code class = "html">
+&lt;p id="footer">Copyright 2015&lt;/p>
+
+</code></pre>
+					 <p style="background-color:orange;">Copyright 2015</p>
+					</section>
+
+					<!-- ID vs Class-->
+					<section>
+					<h3>IDs vs. Classes</h3>
+					<div class = "left-align">
+						<span class = "yellow">ID</span> -- Should only apply to one element on a webpage. I.E. A webpage only has one footer.
+						<p>The "#" is how you tell the browser that "this is an id."</p>
+					</div>
+					<div class = "left-align">
+						<span class = "yellow">Class</span> -- Many elements can have the same class. I.E. There can be many warnings on one webpage.
+						<p>The "." is how you tell the browser that "this is a class name."</p>
+					</div>
+				</section>
+
+					<!-- Exercise-->
+					<section>
+						<h3>Let's develop it</h3>
+						<ol>
+							<li>Open up your styles.css and index.html files again in Sublime Text</li>
+							<li>Add the appropriate ids to each of your divs (header, content, sidebar, footer)</li>
+							<li>Add classes to elements that you want styled the same. (For example, sidebar and content may have the same font size or color)</li>
+							<li>Create rules for those classes and ids in your .css file. Don't forget - spelling and case matter.</li>
+							<li>Don't forget to open index.html in Chrome (or refresh the page if it is already open) to see what you've done!</li>
+						</ol>
+					</section>
 
 
         <!-- Box model-->
@@ -568,7 +369,7 @@
         <section>
           <h3>Padding</h3>
           <p>Space between the border and the content</p>
-          <p>Adds to the total size of the box.</p>
+					<p>Adds to the space the element takes up on the page*.</p>
           <img src="images/box-model-padding.png"/>
         </section>
 
@@ -600,11 +401,50 @@ padding: 10px 5px 3px 5px;
         <!-- Border-->
         <section>
           <h3>Border</h3>
-          <p>The edge around the box, specified by thickness, style, color.</p>
-          <p>Adds to the size of the element</p>
+          <p>The edge around the element, specified by thickness, style, color.</p>
+					<p>Adds to the space the element takes up on the page*.</p>
           <img src ="images/box-model-border.png" style="width: 70%;">
         </section>
+					<section>
+						<h3>Border</h3>
+						<p>You can specify each property separately...</p>
 
+	<pre><code class ="css">#myID {
+		border-width: 10px;
+		border-style: dashed;
+		border-color: #666666;
+	}</code></pre>
+	<br />
+	<pre><code class ="css">#myID {
+		border: 10px dashed #666666;
+	}</code></pre>
+						<p> ...or all three together.</p>
+					</section>
+
+					<section>
+						<h3>Border</h3>
+						<p>You can also apply different values to each side of a border.</p><br />
+						<p style="border-color: red; border-width: 10px 5px 1px 20px; border-style: solid;">This paragraph has a style of <br />border-color: red; <br />border-style: solid; <br />border-width: 10px&nbsp;&nbsp;5px&nbsp;&nbsp;1px&nbsp;&nbsp;20px;</p>
+					</section>
+					<section>
+						<h3>Border</h3>
+						<p style="border: 4px solid #ff0000; background-color: grey;">A solid red border</p>
+	<pre><code class = "html">border: 4px solid #ff0000;</code></pre><br />
+	<br />
+						<p style="border-top: 6px dotted #000000; background-color: grey;">A thick dotted black top border</p>
+	<pre><code class ="html">border-top: 6px dotted #000000;</code></pre>
+	<br />
+	<br />
+						<p style="border-top: 4px solid #ff0000; border-bottom: 6px dotted #000000; background-color: grey;">Two diﬀerent border styles</p>
+	<pre><code class ="html">border-top: 4px solid #ff0000;
+	border-bottom: 6px dotted #000000;</code></pre>
+					</section>
+<section>
+	<h3>Margin</h3>
+	<p>The space around between the border and other elements.</p>
+	<p>Adds to the space the element takes up on the page.</p>
+	<img src="images/box-model-margin.png" />
+</section>
         <section>
           <h3>Margin</h3>
           <p>15 pixels on all sides</p>
@@ -620,10 +460,37 @@ padding: 10px 5px 3px 5px;
   margin-top: 10px;
 </code></pre>
         </section>
+				<section>
+					<h3>Box-Sizing</h3>
+					<p>Adding padding or border to an element increases the space that element takes up on the page. We have a CSS property that can change this: <b>box-sizing</b></p>
+					<p>The default value is <b>content-box</b>, (border/padding adds to the space the element takes up).</p>
+					<p>But if you set the value to <b>border-box</b>, the padding and border sizes don't add to the space the element takes up.</p>
+					<div style="width:45%; float: left; margin: 5px;">
+<pre><code class="html">border: 5px solid red;
+padding: 5px;
+width: 80px;
+height: 40px;
+box-sizing: content-box;
+</code></pre>
+<div style="width:80px;height:40px;border:5px solid red; padding: 5px; background-color:black;float: left;"></div>
+<div style="width:80px;height:40px;background-color: black;float: left; margin-left: 10px;"></div>
+					</div>
+					<div style="width:45%;float: left; margin: 5px;">
+<pre><code class="html">border: 5px solid red;
+padding: 5px;
+width: 80px;
+height: 40px;
+box-sizing: border-box;
+</code></pre>
+<div style="width:80px;height:40px;border:5px solid red; padding: 5px; background-color:black;box-sizing: border-box;float: left;"></div>
+<div style="width:80px;height:40px;background-color: black;float: left; margin-left: 10px;"></div>
+					</div>
+				</section>
 
         <section>
           <h3>Auto Margin</h3>
-          <p>If a margin is set to auto on a box that has width, it will take up as much space as possible.</p>
+          <p>If a margin is set to auto <i>on an element that has width</i>, it will add to the margin so that it takes all available space. </p>
+					<p>Uses: center an element within an element whose width is not known, right-align with right margin in an element of unknown width.</p>
           <p>CENTERED</p>
 <pre><code class ="html">
   margin: auto;
@@ -641,8 +508,12 @@ padding: 10px 5px 3px 5px;
         <!-- Exercise -->
     <section>
       <h3>Let's Develop it!</h3>
-      <p>Let's add width, padding, borders, and margins to our divs.</p>
-      <p>Use "margin: auto;"  to center our entire document in the browser.</p>
+			<ol>
+				<li>Let's add width, padding, borders, and margins to our divs.</li>
+				<li>Again, use classes to assign similar width/padding/border/margin to elements, and id to assign unique values to elements</li>
+				<li>Use "margin: auto;"  to center our entire document in the browser.</li>
+			</ol>
+			<p><br>* Hint for centering your document: Add an additional div around the entire page (but within those body tags!) and give it an id of 'container'. Apply all your centering styles to that div.</p>
     </section>
     <section>
       <h2>Questions?</h2>
