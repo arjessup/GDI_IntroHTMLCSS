@@ -82,16 +82,8 @@
 &lt;p>Paragraph with &lt;span class="yellow">yellow&lt;/span> text.&lt;/p>
 </code></pre>
 
-<p>Paragraph with <span class="yellow">yellow</span> text.</p>
-<p>Paragraph with <div class="yellow">yellow</div> text.</p>
-        </section>
-        <!-- Exercise-->
-         <section>
-          <h3>Let's Develop It</h3>
-         <p>Let's add some spans to our content to help highlight some text. </p>
-         <p>Add some interesting styles to those spans</p>
-         <br />
-         <p style="background-color:yellow; font-weight:bold;">Add some links to your text, too! Add several throughout your text :) </p>
+<p>Paragraph with <span class="yellow">span containing yellow</span> text.</p>
+<p>Paragraph with <div class="yellow">div containing yellow</div> text.</p>
         </section>
         <!-- Pseudo class-->
         <section>
@@ -129,16 +121,16 @@ a:link
           <p>Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective!</p>
           <p>Note: a:active MUST come after a:hover in the CSS definition in order to be effective!</p>
         </section>
-
         <!-- Exercise-->
-        <section>
+         <section>
           <h3>Let's Develop It</h3>
-          <p>Add links to your site.</p>
-          <p>And add psuedo classes to your style.css file - change how the link reacts to hover, active, etc.</p>
+					<ol>
+						<li>Add some links to your page.
+						<li>Add pseudo-classes for the links so they can have different styles for each state</li>
+						<li>Add some spans to your content to help highlight text - or individual links.</li>
+						<li>Add interesting styles to those spans</li>
+					</ol>
         </section>
-
-
-
 
 							 <!-- Float-->
 							 <section>
@@ -167,13 +159,13 @@ a:link
 							 </section>
 							 <section>
 								 <h3>Float</h3>
-				<pre><code class ="html">
-					.float{
-						float:left;
-						width:200px;
-						background:yellow;
-					}
-				</code></pre>
+<pre><code class ="html">
+.float{
+  float:left;
+  width:200px;
+  background:yellow;
+}
+</code></pre>
 								<div style ="float:left; text-align: left;width:200px;background:yellow; color:black; padding: 10px;">
 									<small>Hi, I'm a yellow box with black text.<br/>
 									I like to hang out on the left side.</small><br/>
@@ -196,29 +188,29 @@ a:link
 								 <li>If you had an image floated left, and you did not want the paragraph to appear next to it, you would add <strong>clear: left;</strong> to the paragraph.</li>
 								 <li>Clearing both sides makes sure ﬂoats don’t ﬂow past the clear element.</li>
 								 </ul>
-				<pre><code class = "html">
-					clear: right;
-					clear: left;
-					clear: both;
-				</code></pre>
+<pre><code class = "html">
+	clear: right;
+	clear: left;
+	clear: both;
+</code></pre>
 							 </section>
 
 							 <section>
 									<h3>Clear</h3>
-				 <pre><code class ="html">
-					 .float{
-						 float:left;
-						 width:50px;
-						 background:yellow;
-					 }
-					 .clear-left{
-						 clear:left
-					 }
-				 </code></pre>
-								 <div style ="float:left;width:50px;background:yellow; color:black; ">
-									 hi<br/>
-									 hi<br/>
-									 hi<br/>
+ <pre><code class ="html">
+	 .float{
+		 float:left;
+		 width:200px;
+		 background:yellow;
+	 }
+	 .clear-left{
+		 clear:left
+	 }
+ </code></pre>
+								 <div style ="float:left;width:200px;background:yellow; color:black; ">
+									 Div with<br/>
+									 class of <br/>
+									 <b>.float</b><br/>
 								 </div>
 								 <div class = "left-align">Not floating element</div>
 								 <div class = "left-align">Not floating element</div>
@@ -228,8 +220,10 @@ a:link
 								<!-- Exercise-->
 							 <section>
 								 <h3>Let's Develop It</h3>
-								 <p>Use the three values of float (left, right, clear) to position your header, content, sidebar, and footer.</p>
-								 <p>Now that you see those divs in place, you may want to adjust the width/height, padding, border, and margins you added in the last class.</p>
+								 <ol>
+									 <li>Use <b>float</b> to position your header, content, sidebar, and footer</li>
+									 <li>Update the width/height, padding, and margin of those divs if needed.</li>
+								 </ol>
 							 </section>
 
 
@@ -248,40 +242,48 @@ a:link
        <section>
          <h3>Static Positioning</h3>
          <p>In normal flow, inline elements flow from left to right, wrapping to next line when needed.</p>
-<pre><code class = "html">
-&lt;img src="images/cookie1.png"/>
-&lt;img src="images/cookie2.png"/>
-&lt;img src="images/cookie3.png"/>
-...
-&lt;img src="images/cookie2.png"/>
-&lt;img src="images/cookie3.png"/>
+<pre><code class = "html" style="width:45%;float:left;">
+&lt;div class="container">
+  &lt;img src="images/1.png"/>
+  &lt;img src="images/2.png"/>
+  &lt;img src="images/3.png"/>
+  &lt;img src="images/4.png"/>
+  &lt;img src="images/5.png"/>
+  &lt;img src="images/6.png"/>
+  &lt;img src="images/7.png"/>
+  &lt;img src="images/8.png"/>
+  &lt;img src="images/9.png"/>
+&lt;/div>
 
 </code></pre>
-<div  style="text-align: left;">
-<img src="images/cookie1.png"/>
-<img src="images/cookie2.png"/>
-<img src="images/cookie3.png"/>
-<img src="images/cookie1.png"/>
-<img src="images/cookie2.png"/>
-<img src="images/cookie3.png"/>
-<img src="images/cookie2.png"/>
-<img src="images/cookie3.png"/>
+<div style="width:50%; margin-left: 2%;height: 400px; background-color: white; border: 5px solid black; float: left;">
+<img src="images/1.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #ff0000;"/>
+<img src="images/2.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #ff6500;"/>
+<img src="images/3.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #ff9f00;"/>
+<img src="images/4.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #ffff00;"/>
+<img src="images/5.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #7CFC00;"/>
+<img src="images/6.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #00aa33;"/>
+<img src="images/7.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #0055ff;"/>
+<img src="images/8.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #aa00ff;"/>
+<img src="images/9.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: #ff00ff;"/>
 </div>
        </section>
 
        <section>
          <h3>Static Positioning</h3>
-         <p>In normal flow, block elements flow from top to bottom, making a new line after every box.</p>
-<pre><code class ="html">
+         <p>In normal flow, block elements flow from top to bottom, each appearing on a new line.</p>
+<pre><code class ="html" style="width:45%; float: left;">
  &lt;p>Greetings&lt;/p>
- &lt;p>Hello&lt;/p>
- &lt;p>Hi there!&lt;/p>
+ &lt;div>Hello&lt;/div>
+ &lt;h4>Hi there!&lt;/h4>
+
 </code></pre>
-        <div class ="left-align">
-          <p>Greetings</p>
-          <p>Hello</p>
-          <p>Hi there!</p>
-        </div>
+
+<div style="width:50%; margin-left: 2%;height: 400px; background-color: white; border: 5px solid black; float: left;">
+<p> Greetings</p>
+<div>Hello</div>
+<h4>Hi there</h4>
+</div>
       </section>
 
        <!-- Relative Positioning-->
@@ -292,7 +294,7 @@ a:link
          <li>Takes the element out of the normal flow, allowing it to be moved to the top, left, right or bottom. </li>
          <li>Does not affect the elements surrounding it.</li>
          <li>Makes an element a "positioning context" in which to position other elements relative to it.</li>
-         <li>Relative positioning and absolute positioning are used together.</li>
+         <li><b>Relative positioning</b> and <b>absolute positioning</b> are used together.</li>
          </ul>
          </div>
        </section>
@@ -301,67 +303,81 @@ a:link
          <h3>Relative Positioning</h3>
          <p>The "relative" value will still put the element in the normal flow, but then offset it according to top/left/right/bottom properties.</p>
 
-<pre><code class = "html">
-  .relative{
-    position: relative;
-    left: 80px;
-    top: 20px;
-    height: 100px;
-    background-color: yellow;
-  }
+<pre><code class = "html" style="width:45%; float: left;">
+.relative{
+  position: relative;
+  left: 40px;
+  top: 90px;
+  background-color: aqua;
+}
 </code></pre>
- <div style="border:2px solid black;">
- <div style="position: relative; left: 80px; top: 20px;
-   height: 100px; background-color: yellow; color:black; text-align:left">
-   Hello, hi!
- </div>
- </div>
+<div style="width:50%; margin-left: 2%;height: 400px; background-color: white; border: 5px solid black; float: left;">
+<img src="images/1.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/2.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/3.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/4.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/5.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: aqua; position: relative; left: 40px; top: 90px;"/>
+<img src="images/6.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/7.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/8.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+<img src="images/9.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+</div>
        </section>
        <!-- Absolute positioning-->
        <section >
          <h3>Absolute Positioning</h3>
          <div class = "left-align">
-         <ul>
-         <li>Positions element outside of the normal flow.</li>
-         <li>An absolutely positioned element is offset from its container block, positioned relative.</li>
-         <li>Its container block is the first element that has a position other than static.</li>
-         <li>If no such element is found, the container block is &lt;html>.</li>
-         <li>Other elements act as if it's not there.</li>
-         <li>Determined by its oﬀset values in the properties top, bottom, right and left.</li>
-         </ul>
+	         <ul>
+		         <li>Positions element outside of the normal flow.</li>
+		         <li>An absolutely positioned element is offset from its container block, positioned relative.</li>
+		         <li>Its container block is the first element that has a position other than static.</li>
+		         <li>If no such element is found, the container block is &lt;html>.</li>
+		         <li>Other elements act as if it's not there.</li>
+		         <li>Determined by its oﬀset values in the properties top, bottom, right and left.</li>
+	         </ul>
          </div>
        </section>
 
-       <section  style="border: 1px solid black">
+       <section>
          <h3>Absolute Positioning</h3>
          <p>The "absolute" value will take the element out of the normal flow and position it in relation to the window (or the closest non-static element).</p>
-<pre><code class = "html">
-  .top{
-    position: absolute;
-    top: -40px;
-    right: 10px;
-    background-color: yellow
-  }
+
+<pre><code class = "html" style="width:45%; float: left;">
+.absolute {
+ position: absolute;
+ left: 40px;
+ top: 90px;
+ background-color: aqua;
+}
 </code></pre>
-<pre><code class = "html">
-  .bottom{
-    position: absolute;
-    bottom: -40px;
-    left:60px;
-    background-color: green
-  }
-</code></pre>
-         <div>
-         <div style="position: absolute; top: -40px; right: 10px;
-           background-color: yellow; color:black">
-          Up here
-         </div>
-       <div style="position: absolute; bottom: -40px; left:60px;
-         background-color: green">
-          Down here
-         </div>
-         </div>
+				 <div style="width:50%; margin-left: 2%;height: 400px; background-color: white; border: 5px solid black; float: left; position: relative">
+					 <img src="images/1.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/2.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/3.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/4.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/5.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: aqua; position: absolute; left: 40px; top: 90px;"/>
+					 <img src="images/6.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/7.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/8.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+					 <img src="images/9.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 </div>
        </section>
+			 <section>
+				 <h3>Absolute & Relative</h3>
+				 <p>Absolutely positioned number without relatively positioned container div</p>
+				 <br><br>
+				 				 <div style="width:50%; margin: auto;height: 400px; background-color: white; border: 5px solid black;">
+				 					 <img src="images/1.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/2.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/3.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/4.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/5.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: aqua; position: absolute; left: 40px; top: 90px;"/>
+				 					 <img src="images/6.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/7.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/8.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 					 <img src="images/9.png" style="width: 25%; margin: 1%; border: 2px solid black; background-color: grey;"/>
+				 				 </div>
+			 </section>
        <section>
        	<h3>Example: Absolute Positioning</h3>
        	<div class="left left-align" style="width: 45%;">
@@ -375,48 +391,70 @@ a:link
        </section>
        <section>
        <h3>Z-index</h3>
-         <p class="left-align">When you use positioning to move elements out of the normal flow of content, elements can overlap. You can change the order of overlapping with z-index.</p>
-         <p class="left-align">The element with highest z-index goes on top.</p>
+         <p class="left-align">Location on the 3rd axis, the z-axis, is determined by the order in which items are listed in the HTML file.</p>
 <pre><code class ="html">
-  .bottom{
-    position: absolute;
-    bottom: 10px;
-    left:60px;
-    background-color: yellow;
-  }
+&lt;div>
+  &lt;img src="images/1.png" style="position:relative;">
+  &lt;img src="images/2.png" style="position:relative; left:-80px;">
+  &lt;img src="images/3.png" style="position:relative; left:-180px;">
+&lt;/div>
+
 </code></pre>
+        <div style="width: 80%; background-color: white; border: 5px solid black; margin: auto;">
+					<img src="images/1.png" style="width:25%;position: relative;background-color: red;">
+					<img src="images/2.png" style="width:25%;position: relative; left: -80px; background-color: yellow">
+					<img src="images/3.png" style="width:25%;position: relative; left: -180px;background-color: blue;">
+				</div>
+			</section>
+			<section>
+				<h3>Z-Index</h3>
+				<p>When you use positioning to move elements out of the normal flow of content, elements can overlap. You can change the order of overlapping with z-index.</p>
+				<p>The element with highest z-index goes on top.</p>
 <pre><code class ="html">
-  .top{
-    position: absolute;
-    bottom: 15px;
-    left:60px;
-    background-color: green;
-    z-index: 2;
-  }
+&lt;div>
+  &lt;img src="images/1.png" style="z-index:2; ...">
+  &lt;img src="images/2.png" style="...">
+  &lt;img src="images/3.png" style="...">
+&lt;/div>
+
 </code></pre>
-        <div style="position: absolute; bottom: -20px; left:60px;
-          background-color: yellow; color:black"> Bottom </div>
-        <div style="position: absolute; bottom: -15px; left:60px;
-          background-color: green; z-index: 2; "> Top </div>
-       </section>
+        <div style="width: 80%; background-color: white; border: 5px solid black; margin: auto;">
+					<img src="images/1.png" style="width:25%;position: relative;background-color: red; z-index: 2;">
+					<img src="images/2.png" style="width:25%;position: relative; left: -80px; background-color: yellow;">
+					<img src="images/3.png" style="width:25%;position: relative; left: -180px;background-color: blue;">
+				</div>
+			</section>
        <section>
        	<h3>Let's Develop it!</h3>
-       	<p>Let's add some positioning.</p>
-       	<p>Let's create a div that contains an image and a caption, and position the caption absolutely overtop the image.</p>
-
+				<ol>
+					<li>Add an image with a caption over it.  Rememer: you'll need to use relative and absolute positioning as well as z-index.</li>
+					<li>Take a look at your code.  See if there are things that you would do differently now that we're through all the main course content. Make changes for readability, formatting, etc.  We call this <b>refactoring</b></li>
+				</ol>
        </section>
 
-
-
-
-
-
-
-
-
-
-
-
+			 <section>
+				 <h3>What Next?</h3>
+				 <p style="text-align:left;">You can continue learning with GDI-Columbus.</p>
+				 <p style="text-align:left;">Classes:</p>
+				 <ol style="text-align: left;">
+					 <li style="text-align: left;">Intermediate HTML/CSS - HTML5</li>
+					 <li style="text-align: left;">Javascript</li>
+					 <li style="text-align: left;">PHP or other languages as available</li>
+				 </ol><br><br>
+				 <p style="text-align: left;">Community:</p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://www.meetup.com/girldevelopitcbus">Code & Coffee</a></p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://www.meetup.com/girldevelopitcbus">Hack Nights</a></p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; GDI Columbus Slack</p>
+			 </section>
+			 <section>
+				 <h3>What Next?</h3>
+				 <p style="text-align:left;">There are also many online resources, for free and for fees:</p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://codepen.io/">CodePen.io</a></p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://www.codecademy.com/">CodeCademy</a></p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://www.codeschool.com/">Code School</a></p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://developer.mozilla.org/en-US/docs/Learn">Mozilla Developer Network Learn</a></p>
+					 <p style="text-align: left; margin-left: 140px;">&bull; <a href="https://developer.mozilla.org/en-US/">MDN Docs</a></p>
+			 </section>
 
        <!-- Question-->
         <section>

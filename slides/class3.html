@@ -226,8 +226,8 @@
 		<p>HTML Attribute: </p>
 		<ul>
 			<li>Add the "class" attribute to all HTML elements in our page that we want targeted for a particular CSS rule.</li>
-			<li>The value of the "class" attribute is the class name.</li>
-			<li>Just like other attribute-value pairs, the syntax is: class="className" </li>
+			<li>The value of the <b>class</b> attribute is the class name.</li>
+			<li>Just like other attribute-value pairs, the syntax is: <b>class="className"</b> </li>
 		</ul>
 		<br />
 		<br />
@@ -235,10 +235,10 @@
 		<p>CSS Selector: </p>
 		<ul>
 			<li>
-				In the selector, we tell the browser that the selector is a class by starting with a "."
+				In the selector, we tell the browser that the selector is a class by starting with a "<b>.</b>"
 			</li>
 			<li>
-				This is followed immediately by the class name. The class name is case sensitive - it must match the value we gave to the "class" attribute in our HTML.
+				This is followed immediately by the class name. The class name is case sensitive - it must match the value we gave to the class attribute in our HTML.
 			</li>
 		</ul>
 	</div>
@@ -253,13 +253,13 @@ color: red;
 }</code></pre>
 						<br />
 <pre><code class = "html">
-&lt;p>Run away!&lt;/p>
+&lt;p>Run away.&lt;/p>
 &lt;p class="warning">Run away!&lt;/p>
 &lt;h3 class="warning">No, really. RUN AWAY!&lt;h3>
 
 </code></pre>
 					 <br />
-					 <p>Run away!</p>
+					 <p>Run away.</p>
 					 <p style="color:red;">Run away!</p>
 					 <h3 style="color:red;">No, really. RUN AWAY!</h3>
 					</section>
@@ -278,19 +278,19 @@ color: red;
 		<h3>ID: HTML vs CSS</h3>
 		<p>HTML Attribute: </p>
 		<ul>
-			<li>Add the "id" attribute to the single HTML element in our page that we want targeted for the CSS rule.</li>
-			<li>The value of the "id" attribute is the ID name.</li>
-			<li>Just like other attribute-value pairs, the HTML syntax is: id="idName" </li>
+			<li>Add the <b>id</b> attribute to the single HTML element in our page that we want targeted for the CSS rule.</li>
+			<li>The value of the <b>id</b> attribute is the ID name.</li>
+			<li>Just like other attribute-value pairs, the HTML syntax is: <b>id="idName"</b> </li>
 		</ul>
 		<br />
 		<div class="fragment">
 		<p>CSS Selector: </p>
 		<ul>
 			<li>
-				In the selector, we tell the browser that the selector is an ID by starting with a "#"
+				In the selector, we tell the browser that the selector is an ID by starting with a "<b>#</b>"
 			</li>
 			<li>
-				This is followed immediately by the ID name. The ID name is case sensitive, and spelling counts.  It must match the value we gave to the "id" attribute in our HTML.
+				This is followed immediately by the ID name. The ID name is case sensitive, and spelling counts.  It must match the value we gave to the <b>id</b> attribute in our HTML.
 			</li>
 		</ul>
 	</div>
@@ -304,7 +304,7 @@ background-color: orange;
 }
 
 </code></pre>
-						<p>Selects all elements with an id of "footer".</p><br /><br />
+						<p>Selects the element with an id of "footer".</p><br /><br />
 
 <pre><code class = "html">
 &lt;p id="footer">Copyright 2015&lt;/p>
@@ -318,11 +318,13 @@ background-color: orange;
 					<h3>IDs vs. Classes</h3>
 					<div class = "left-align">
 						<span class = "yellow">ID</span> -- Should only apply to one element on a webpage. I.E. A webpage only has one footer.
-						<p>The "#" is how you tell the browser that "this is an id."</p>
+						<p>CSS: <b>#idName { ... }</b></p>
+						<p>HTML: <b>&lt;tagName id="idName"> ... &lt;/tagName></b></p>
 					</div>
 					<div class = "left-align">
 						<span class = "yellow">Class</span> -- Many elements can have the same class. I.E. There can be many warnings on one webpage.
-						<p>The "." is how you tell the browser that "this is a class name."</p>
+						<p>CSS: <b>.className { ... }</b></p>
+						<p>HTML: <b>&lt;tagName class="className"> ... &lt;/tagName></b></p>
 					</div>
 				</section>
 
